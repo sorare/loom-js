@@ -16,8 +16,8 @@ export { unmarshalBigUIntPB, marshalBigUIntPB } from './big-uint'
 export {
   SignedTxMiddleware,
   SignedEthTxMiddleware,
-  SignedTronTxMiddleware,
-  SignedBinanceTxMiddleware,
+  // SignedTronTxMiddleware,
+  // SignedBinanceTxMiddleware,
   NonceTxMiddleware,
   CachedNonceTxMiddleware,
   SpeculativeNonceTxMiddleware,
@@ -44,13 +44,13 @@ export {
   getJsonRPCSignerAsync,
   getMetamaskSigner
 } from './solidity-helpers'
-export { DPOSUser } from './dpos-user'
-export { DPOSUserV3 } from './dpos-user-v3'
+// export { DPOSUser } from './dpos-user'
+// export { DPOSUserV3 } from './dpos-user-v3'
 export { GatewayVersion, GatewayUser } from './gateway-user'
 export { CrossChainUser } from './crosschain-user'
 
-export { TronWebSigner } from './tron-web-signer'
-export { BinanceSigner } from './binance-signer'
+// export { TronWebSigner } from './tron-web-signer'
+// export { BinanceSigner } from './binance-signer'
 
 export {
   createEthereumGatewayAsync,

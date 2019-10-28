@@ -2,7 +2,7 @@ import ripemd160 from 'ripemd160'
 import { toChecksumAddress } from 'ethereumjs-util'
 
 import { bufferToProtobufBytes } from './crypto-utils'
-import * as pb from './proto/loom_pb'
+import { Address as pbAddress } from './proto/loom_pb'
 
 export class LocalAddress {
   constructor(public bytes: Uint8Array) {
@@ -72,8 +72,8 @@ export class Address {
     return `${this.chainId}:${this.local.toString()}`
   }
 
-  MarshalPB(): pb.Address {
-    const addr = new pb.Address()
+  MarshalPB(): pbAddress {
+    const addr = new pbAddress()
     addr.setChainId(this.chainId)
     addr.setLocal(bufferToProtobufBytes(this.local.bytes))
     return addr
@@ -86,12 +86,12 @@ export class Address {
   /**
    * @deprecated Use the function UnmarshalPB instead
    */
-  static UmarshalPB(pb: pb.Address): Address {
+  static UmarshalPB(pb: pbAddress): Address {
     console.warn('Function UmarshalPB is deprecated and should be replaced by UnmarshalPB')
     return Address.UnmarshalPB(pb)
   }
 
-  static UnmarshalPB(pb: pb.Address): Address {
+  static UnmarshalPB(pb: pbAddress): Address {
     return new Address(pb.getChainId(), new LocalAddress(pb.getLocal_asU8()))
   }
 
