@@ -44,8 +44,6 @@ export {
   getJsonRPCSignerAsync,
   getMetamaskSigner
 } from './solidity-helpers'
-// export { DPOSUser } from './dpos-user'
-// export { DPOSUserV3 } from './dpos-user-v3'
 export { GatewayVersion, GatewayUser } from './gateway-user'
 export { CrossChainUser } from './crosschain-user'
 

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -68,6 +70,7 @@ proto.SignedTx.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.SignedTx} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.SignedTx.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -132,49 +135,40 @@ proto.SignedTx.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.SignedTx} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.SignedTx.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.SignedTx.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.SignedTx.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.SignedTx} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.SignedTx.prototype.serializeBinaryToWriter = function (writer) {
+proto.SignedTx.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getInner_asU8();
+  f = message.getInner_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
       f
     );
   }
-  f = this.getSignature_asU8();
+  f = message.getSignature_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getPublicKey_asU8();
+  f = message.getPublicKey_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
@@ -185,20 +179,11 @@ proto.SignedTx.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.SignedTx} The clone.
- */
-proto.SignedTx.prototype.cloneMessage = function() {
-  return /** @type {!proto.SignedTx} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes inner = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.SignedTx.prototype.getInner = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -226,9 +211,9 @@ proto.SignedTx.prototype.getInner_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.SignedTx.prototype.setInner = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -237,7 +222,7 @@ proto.SignedTx.prototype.setInner = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.SignedTx.prototype.getSignature = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -265,9 +250,9 @@ proto.SignedTx.prototype.getSignature_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.SignedTx.prototype.setSignature = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -276,7 +261,7 @@ proto.SignedTx.prototype.setSignature = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.SignedTx.prototype.getPublicKey = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -304,9 +289,9 @@ proto.SignedTx.prototype.getPublicKey_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.SignedTx.prototype.setPublicKey = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -353,11 +338,12 @@ proto.NonceTx.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.NonceTx} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.NonceTx.toObject = function(includeInstance, msg) {
   var f, obj = {
     inner: msg.getInner_asB64(),
-    sequence: msg.getSequence()
+    sequence: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -412,42 +398,33 @@ proto.NonceTx.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.NonceTx} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.NonceTx.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.NonceTx.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.NonceTx.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.NonceTx} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.NonceTx.prototype.serializeBinaryToWriter = function (writer) {
+proto.NonceTx.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getInner_asU8();
+  f = message.getInner_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
       f
     );
   }
-  f = this.getSequence();
+  f = message.getSequence();
   if (f !== 0) {
     writer.writeUint64(
       2,
@@ -458,20 +435,11 @@ proto.NonceTx.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.NonceTx} The clone.
- */
-proto.NonceTx.prototype.cloneMessage = function() {
-  return /** @type {!proto.NonceTx} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes inner = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.NonceTx.prototype.getInner = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -499,9 +467,9 @@ proto.NonceTx.prototype.getInner_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.NonceTx.prototype.setInner = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -510,13 +478,13 @@ proto.NonceTx.prototype.setInner = function(value) {
  * @return {number}
  */
 proto.NonceTx.prototype.getSequence = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.NonceTx.prototype.setSequence = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -563,6 +531,7 @@ proto.BigUInt.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.BigUInt} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.BigUInt.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -617,35 +586,26 @@ proto.BigUInt.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.BigUInt} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.BigUInt.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.BigUInt.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.BigUInt.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.BigUInt} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.BigUInt.prototype.serializeBinaryToWriter = function (writer) {
+proto.BigUInt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getValue_asU8();
+  f = message.getValue_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
@@ -656,20 +616,11 @@ proto.BigUInt.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.BigUInt} The clone.
- */
-proto.BigUInt.prototype.cloneMessage = function() {
-  return /** @type {!proto.BigUInt} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes value = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.BigUInt.prototype.getValue = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -697,9 +648,9 @@ proto.BigUInt.prototype.getValue_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.BigUInt.prototype.setValue = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -746,10 +697,11 @@ proto.Address.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.Address} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.Address.toObject = function(includeInstance, msg) {
   var f, obj = {
-    chainId: msg.getChainId(),
+    chainId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     local: msg.getLocal_asB64()
   };
 
@@ -805,42 +757,33 @@ proto.Address.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.Address} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.Address.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.Address.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.Address.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.Address} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Address.prototype.serializeBinaryToWriter = function (writer) {
+proto.Address.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getChainId();
+  f = message.getChainId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getLocal_asU8();
+  f = message.getLocal_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -851,26 +794,17 @@ proto.Address.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.Address} The clone.
- */
-proto.Address.prototype.cloneMessage = function() {
-  return /** @type {!proto.Address} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string chain_id = 1;
  * @return {string}
  */
 proto.Address.prototype.getChainId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.Address.prototype.setChainId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -879,7 +813,7 @@ proto.Address.prototype.setChainId = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.Address.prototype.getLocal = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -907,9 +841,9 @@ proto.Address.prototype.getLocal_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.Address.prototype.setLocal = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -956,10 +890,11 @@ proto.Transaction.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.Transaction} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.Transaction.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId(),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     data: msg.getData_asB64()
   };
 
@@ -1015,42 +950,33 @@ proto.Transaction.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.Transaction} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.Transaction.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.Transaction.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.Transaction.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.Transaction} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Transaction.prototype.serializeBinaryToWriter = function (writer) {
+proto.Transaction.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getId();
+  f = message.getId();
   if (f !== 0) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = this.getData_asU8();
+  f = message.getData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -1061,26 +987,17 @@ proto.Transaction.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.Transaction} The clone.
- */
-proto.Transaction.prototype.cloneMessage = function() {
-  return /** @type {!proto.Transaction} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional uint32 id = 1;
  * @return {number}
  */
 proto.Transaction.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.Transaction.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1089,7 +1006,7 @@ proto.Transaction.prototype.setId = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.Transaction.prototype.getData = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1117,9 +1034,9 @@ proto.Transaction.prototype.getData_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.Transaction.prototype.setData = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -1166,6 +1083,7 @@ proto.MessageTx.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.MessageTx} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.MessageTx.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1232,35 +1150,26 @@ proto.MessageTx.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.MessageTx} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.MessageTx.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.MessageTx.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.MessageTx.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.MessageTx} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.MessageTx.prototype.serializeBinaryToWriter = function (writer) {
+proto.MessageTx.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTo();
+  f = message.getTo();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1268,7 +1177,7 @@ proto.MessageTx.prototype.serializeBinaryToWriter = function (writer) {
       proto.Address.serializeBinaryToWriter
     );
   }
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1276,7 +1185,7 @@ proto.MessageTx.prototype.serializeBinaryToWriter = function (writer) {
       proto.Address.serializeBinaryToWriter
     );
   }
-  f = this.getData_asU8();
+  f = message.getData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
@@ -1287,25 +1196,16 @@ proto.MessageTx.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.MessageTx} The clone.
- */
-proto.MessageTx.prototype.cloneMessage = function() {
-  return /** @type {!proto.MessageTx} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address to = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.MessageTx.prototype.getTo = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.MessageTx.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1318,7 +1218,7 @@ proto.MessageTx.prototype.clearTo = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.MessageTx.prototype.hasTo = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1327,15 +1227,15 @@ proto.MessageTx.prototype.hasTo = function() {
 
 /**
  * optional Address from = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.MessageTx.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.MessageTx.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1348,7 +1248,7 @@ proto.MessageTx.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.MessageTx.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1360,7 +1260,7 @@ proto.MessageTx.prototype.hasFrom = function() {
  * @return {!(string|Uint8Array)}
  */
 proto.MessageTx.prototype.getData = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1388,9 +1288,9 @@ proto.MessageTx.prototype.getData_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.MessageTx.prototype.setData = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -1437,12 +1337,13 @@ proto.DeployTx.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.DeployTx} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.DeployTx.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vmType: msg.getVmType(),
+    vmType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     code: msg.getCode_asB64(),
-    name: msg.getName()
+    name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1501,49 +1402,40 @@ proto.DeployTx.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.DeployTx} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.DeployTx.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.DeployTx.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.DeployTx.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.DeployTx} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DeployTx.prototype.serializeBinaryToWriter = function (writer) {
+proto.DeployTx.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getVmType();
+  f = message.getVmType();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = this.getCode_asU8();
+  f = message.getCode_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getName();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1554,26 +1446,17 @@ proto.DeployTx.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.DeployTx} The clone.
- */
-proto.DeployTx.prototype.cloneMessage = function() {
-  return /** @type {!proto.DeployTx} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional VMType vm_type = 1;
  * @return {!proto.VMType}
  */
 proto.DeployTx.prototype.getVmType = function() {
-  return /** @type {!proto.VMType} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.VMType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.VMType} value  */
+/** @param {!proto.VMType} value */
 proto.DeployTx.prototype.setVmType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -1582,7 +1465,7 @@ proto.DeployTx.prototype.setVmType = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.DeployTx.prototype.getCode = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1610,9 +1493,9 @@ proto.DeployTx.prototype.getCode_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.DeployTx.prototype.setCode = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -1621,13 +1504,13 @@ proto.DeployTx.prototype.setCode = function(value) {
  * @return {string}
  */
 proto.DeployTx.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.DeployTx.prototype.setName = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1674,6 +1557,7 @@ proto.DeployResponse.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.DeployResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.DeployResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1734,35 +1618,26 @@ proto.DeployResponse.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.DeployResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.DeployResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.DeployResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.DeployResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.DeployResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DeployResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.DeployResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getContract();
+  f = message.getContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1770,7 +1645,7 @@ proto.DeployResponse.prototype.serializeBinaryToWriter = function (writer) {
       proto.Address.serializeBinaryToWriter
     );
   }
-  f = this.getOutput_asU8();
+  f = message.getOutput_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -1781,25 +1656,16 @@ proto.DeployResponse.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.DeployResponse} The clone.
- */
-proto.DeployResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.DeployResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.DeployResponse.prototype.getContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.DeployResponse.prototype.setContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1812,7 +1678,7 @@ proto.DeployResponse.prototype.clearContract = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.DeployResponse.prototype.hasContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1824,7 +1690,7 @@ proto.DeployResponse.prototype.hasContract = function() {
  * @return {!(string|Uint8Array)}
  */
 proto.DeployResponse.prototype.getOutput = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1852,9 +1718,9 @@ proto.DeployResponse.prototype.getOutput_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.DeployResponse.prototype.setOutput = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -1901,6 +1767,7 @@ proto.DeployResponseData.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.DeployResponseData} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.DeployResponseData.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1960,42 +1827,33 @@ proto.DeployResponseData.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.DeployResponseData} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.DeployResponseData.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.DeployResponseData.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.DeployResponseData.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.DeployResponseData} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DeployResponseData.prototype.serializeBinaryToWriter = function (writer) {
+proto.DeployResponseData.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTxHash_asU8();
+  f = message.getTxHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
       f
     );
   }
-  f = this.getBytecode_asU8();
+  f = message.getBytecode_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -2006,20 +1864,11 @@ proto.DeployResponseData.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.DeployResponseData} The clone.
- */
-proto.DeployResponseData.prototype.cloneMessage = function() {
-  return /** @type {!proto.DeployResponseData} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes tx_hash = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.DeployResponseData.prototype.getTxHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2047,9 +1896,9 @@ proto.DeployResponseData.prototype.getTxHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.DeployResponseData.prototype.setTxHash = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2058,7 +1907,7 @@ proto.DeployResponseData.prototype.setTxHash = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.DeployResponseData.prototype.getBytecode = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2086,9 +1935,9 @@ proto.DeployResponseData.prototype.getBytecode_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.DeployResponseData.prototype.setBytecode = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -2135,10 +1984,11 @@ proto.CallTx.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.CallTx} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.CallTx.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vmType: msg.getVmType(),
+    vmType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     input: msg.getInput_asB64(),
     value: (f = msg.getValue()) && proto.BigUInt.toObject(includeInstance, f)
   };
@@ -2200,49 +2050,40 @@ proto.CallTx.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.CallTx} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.CallTx.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.CallTx.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.CallTx.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.CallTx} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.CallTx.prototype.serializeBinaryToWriter = function (writer) {
+proto.CallTx.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getVmType();
+  f = message.getVmType();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = this.getInput_asU8();
+  f = message.getInput_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getValue();
+  f = message.getValue();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -2254,26 +2095,17 @@ proto.CallTx.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.CallTx} The clone.
- */
-proto.CallTx.prototype.cloneMessage = function() {
-  return /** @type {!proto.CallTx} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional VMType vm_type = 1;
  * @return {!proto.VMType}
  */
 proto.CallTx.prototype.getVmType = function() {
-  return /** @type {!proto.VMType} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.VMType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.VMType} value  */
+/** @param {!proto.VMType} value */
 proto.CallTx.prototype.setVmType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -2282,7 +2114,7 @@ proto.CallTx.prototype.setVmType = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.CallTx.prototype.getInput = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2310,23 +2142,23 @@ proto.CallTx.prototype.getInput_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.CallTx.prototype.setInput = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
 /**
  * optional BigUInt value = 3;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.CallTx.prototype.getValue = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto.BigUInt, 3));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.CallTx.prototype.setValue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -2339,7 +2171,7 @@ proto.CallTx.prototype.clearValue = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.CallTx.prototype.hasValue = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -2389,10 +2221,11 @@ proto.PluginCode.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.PluginCode} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.PluginCode.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: msg.getName(),
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     input: msg.getInput_asB64()
   };
 
@@ -2448,42 +2281,33 @@ proto.PluginCode.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.PluginCode} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.PluginCode.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.PluginCode.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.PluginCode.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.PluginCode} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.PluginCode.prototype.serializeBinaryToWriter = function (writer) {
+proto.PluginCode.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getName();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getInput_asU8();
+  f = message.getInput_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -2494,26 +2318,17 @@ proto.PluginCode.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.PluginCode} The clone.
- */
-proto.PluginCode.prototype.cloneMessage = function() {
-  return /** @type {!proto.PluginCode} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string name = 1;
  * @return {string}
  */
 proto.PluginCode.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.PluginCode.prototype.setName = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2522,7 +2337,7 @@ proto.PluginCode.prototype.setName = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.PluginCode.prototype.getInput = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2550,9 +2365,9 @@ proto.PluginCode.prototype.getInput_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.PluginCode.prototype.setInput = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -2599,11 +2414,12 @@ proto.Request.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.Request} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.Request.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contentType: msg.getContentType(),
-    accept: msg.getAccept(),
+    contentType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    accept: jspb.Message.getFieldWithDefault(msg, 2, 0),
     body: msg.getBody_asB64()
   };
 
@@ -2663,49 +2479,40 @@ proto.Request.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.Request} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.Request.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.Request.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.Request.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.Request} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Request.prototype.serializeBinaryToWriter = function (writer) {
+proto.Request.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getContentType();
+  f = message.getContentType();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = this.getAccept();
+  f = message.getAccept();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
       f
     );
   }
-  f = this.getBody_asU8();
+  f = message.getBody_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
@@ -2716,26 +2523,17 @@ proto.Request.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.Request} The clone.
- */
-proto.Request.prototype.cloneMessage = function() {
-  return /** @type {!proto.Request} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional EncodingType content_type = 1;
  * @return {!proto.EncodingType}
  */
 proto.Request.prototype.getContentType = function() {
-  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.EncodingType} value  */
+/** @param {!proto.EncodingType} value */
 proto.Request.prototype.setContentType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -2744,13 +2542,13 @@ proto.Request.prototype.setContentType = function(value) {
  * @return {!proto.EncodingType}
  */
 proto.Request.prototype.getAccept = function() {
-  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {!proto.EncodingType} value  */
+/** @param {!proto.EncodingType} value */
 proto.Request.prototype.setAccept = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -2759,7 +2557,7 @@ proto.Request.prototype.setAccept = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.Request.prototype.getBody = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -2787,9 +2585,9 @@ proto.Request.prototype.getBody_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.Request.prototype.setBody = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -2836,10 +2634,11 @@ proto.Response.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.Response} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.Response.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contentType: msg.getContentType(),
+    contentType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     body: msg.getBody_asB64()
   };
 
@@ -2895,42 +2694,33 @@ proto.Response.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.Response} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.Response.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.Response.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.Response.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.Response} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.Response.prototype.serializeBinaryToWriter = function (writer) {
+proto.Response.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getContentType();
+  f = message.getContentType();
   if (f !== 0.0) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = this.getBody_asU8();
+  f = message.getBody_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -2941,26 +2731,17 @@ proto.Response.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.Response} The clone.
- */
-proto.Response.prototype.cloneMessage = function() {
-  return /** @type {!proto.Response} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional EncodingType content_type = 1;
  * @return {!proto.EncodingType}
  */
 proto.Response.prototype.getContentType = function() {
-  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {!proto.EncodingType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {!proto.EncodingType} value  */
+/** @param {!proto.EncodingType} value */
 proto.Response.prototype.setContentType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -2969,7 +2750,7 @@ proto.Response.prototype.setContentType = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.Response.prototype.getBody = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2997,9 +2778,9 @@ proto.Response.prototype.getBody_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.Response.prototype.setBody = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -3046,10 +2827,11 @@ proto.ContractMethodCall.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.ContractMethodCall} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.ContractMethodCall.toObject = function(includeInstance, msg) {
   var f, obj = {
-    method: msg.getMethod(),
+    method: jspb.Message.getFieldWithDefault(msg, 1, ""),
     args: msg.getArgs_asB64()
   };
 
@@ -3105,42 +2887,33 @@ proto.ContractMethodCall.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.ContractMethodCall} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.ContractMethodCall.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.ContractMethodCall.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.ContractMethodCall.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.ContractMethodCall} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.ContractMethodCall.prototype.serializeBinaryToWriter = function (writer) {
+proto.ContractMethodCall.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getMethod();
+  f = message.getMethod();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getArgs_asU8();
+  f = message.getArgs_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
@@ -3151,26 +2924,17 @@ proto.ContractMethodCall.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.ContractMethodCall} The clone.
- */
-proto.ContractMethodCall.prototype.cloneMessage = function() {
-  return /** @type {!proto.ContractMethodCall} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string method = 1;
  * @return {string}
  */
 proto.ContractMethodCall.prototype.getMethod = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.ContractMethodCall.prototype.setMethod = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3179,7 +2943,7 @@ proto.ContractMethodCall.prototype.setMethod = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.ContractMethodCall.prototype.getArgs = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3207,9 +2971,9 @@ proto.ContractMethodCall.prototype.getArgs_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.ContractMethodCall.prototype.setArgs = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
