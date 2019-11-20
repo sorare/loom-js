@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -61,6 +63,7 @@ proto.AddressMapperMapping.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperMapping} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -122,35 +125,26 @@ proto.AddressMapperMapping.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperMapping} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperMapping.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperMapping.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperMapping.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperMapping} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperMapping.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -158,7 +152,7 @@ proto.AddressMapperMapping.prototype.serializeBinaryToWriter = function (writer)
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTo();
+  f = message.getTo();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -170,25 +164,16 @@ proto.AddressMapperMapping.prototype.serializeBinaryToWriter = function (writer)
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperMapping} The clone.
- */
-proto.AddressMapperMapping.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperMapping} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperMapping.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperMapping.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -201,7 +186,7 @@ proto.AddressMapperMapping.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperMapping.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -210,15 +195,15 @@ proto.AddressMapperMapping.prototype.hasFrom = function() {
 
 /**
  * optional Address to = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperMapping.prototype.getTo = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperMapping.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -231,7 +216,7 @@ proto.AddressMapperMapping.prototype.clearTo = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperMapping.prototype.hasTo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -281,6 +266,7 @@ proto.AddressMapperInitRequest.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperInitRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperInitRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -331,43 +317,25 @@ proto.AddressMapperInitRequest.deserializeBinaryFromReader = function(msg, reade
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperInitRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperInitRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperInitRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperInitRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperInitRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperInitRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperInitRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperInitRequest} The clone.
- */
-proto.AddressMapperInitRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperInitRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -414,6 +382,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.toObject = function(opt_i
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperAddIdentityMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperAddIdentityMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -480,35 +449,26 @@ proto.AddressMapperAddIdentityMappingRequest.deserializeBinaryFromReader = funct
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperAddIdentityMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperAddIdentityMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperAddIdentityMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperAddIdentityMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperAddIdentityMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperAddIdentityMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -516,7 +476,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.serializeBinaryToWriter =
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTo();
+  f = message.getTo();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -524,7 +484,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.serializeBinaryToWriter =
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getSignature_asU8();
+  f = message.getSignature_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
@@ -535,25 +495,16 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.serializeBinaryToWriter =
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperAddIdentityMappingRequest} The clone.
- */
-proto.AddressMapperAddIdentityMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperAddIdentityMappingRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperAddIdentityMappingRequest.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -566,7 +517,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -575,15 +526,15 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.hasFrom = function() {
 
 /**
  * optional Address to = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.getTo = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperAddIdentityMappingRequest.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -596,7 +547,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.clearTo = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.hasTo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -608,7 +559,7 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.hasTo = function() {
  * @return {!(string|Uint8Array)}
  */
 proto.AddressMapperAddIdentityMappingRequest.prototype.getSignature = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -636,9 +587,9 @@ proto.AddressMapperAddIdentityMappingRequest.prototype.getSignature_asU8 = funct
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.AddressMapperAddIdentityMappingRequest.prototype.setSignature = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -685,6 +636,7 @@ proto.AddressMapperRemoveMappingRequest.prototype.toObject = function(opt_includ
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperRemoveMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperRemoveMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -735,43 +687,25 @@ proto.AddressMapperRemoveMappingRequest.deserializeBinaryFromReader = function(m
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperRemoveMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperRemoveMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperRemoveMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperRemoveMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperRemoveMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperRemoveMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperRemoveMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperRemoveMappingRequest} The clone.
- */
-proto.AddressMapperRemoveMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperRemoveMappingRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -818,6 +752,7 @@ proto.AddressMapperGetMappingRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperGetMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperGetMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -873,35 +808,26 @@ proto.AddressMapperGetMappingRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperGetMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperGetMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperGetMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperGetMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperGetMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperGetMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperGetMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -913,25 +839,16 @@ proto.AddressMapperGetMappingRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperGetMappingRequest} The clone.
- */
-proto.AddressMapperGetMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperGetMappingRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperGetMappingRequest.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperGetMappingRequest.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -944,7 +861,7 @@ proto.AddressMapperGetMappingRequest.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperGetMappingRequest.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -994,6 +911,7 @@ proto.AddressMapperGetMappingResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperGetMappingResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperGetMappingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1055,35 +973,26 @@ proto.AddressMapperGetMappingResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperGetMappingResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperGetMappingResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperGetMappingResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperGetMappingResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperGetMappingResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperGetMappingResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperGetMappingResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1091,7 +1000,7 @@ proto.AddressMapperGetMappingResponse.prototype.serializeBinaryToWriter = functi
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTo();
+  f = message.getTo();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1103,25 +1012,16 @@ proto.AddressMapperGetMappingResponse.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperGetMappingResponse} The clone.
- */
-proto.AddressMapperGetMappingResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperGetMappingResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperGetMappingResponse.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperGetMappingResponse.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1134,7 +1034,7 @@ proto.AddressMapperGetMappingResponse.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperGetMappingResponse.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1143,15 +1043,15 @@ proto.AddressMapperGetMappingResponse.prototype.hasFrom = function() {
 
 /**
  * optional Address to = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperGetMappingResponse.prototype.getTo = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperGetMappingResponse.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1164,7 +1064,7 @@ proto.AddressMapperGetMappingResponse.prototype.clearTo = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperGetMappingResponse.prototype.hasTo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1214,6 +1114,7 @@ proto.AddressMapperHasMappingRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperHasMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperHasMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1269,35 +1170,26 @@ proto.AddressMapperHasMappingRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperHasMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperHasMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperHasMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperHasMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperHasMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperHasMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperHasMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1309,25 +1201,16 @@ proto.AddressMapperHasMappingRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperHasMappingRequest} The clone.
- */
-proto.AddressMapperHasMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperHasMappingRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.AddressMapperHasMappingRequest.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.AddressMapperHasMappingRequest.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1340,7 +1223,7 @@ proto.AddressMapperHasMappingRequest.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.AddressMapperHasMappingRequest.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1390,10 +1273,11 @@ proto.AddressMapperHasMappingResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.AddressMapperHasMappingResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.AddressMapperHasMappingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    hasMapping: msg.getHasMapping()
+    hasMapping: jspb.Message.getFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -1444,35 +1328,26 @@ proto.AddressMapperHasMappingResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.AddressMapperHasMappingResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.AddressMapperHasMappingResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.AddressMapperHasMappingResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.AddressMapperHasMappingResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.AddressMapperHasMappingResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.AddressMapperHasMappingResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.AddressMapperHasMappingResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getHasMapping();
+  f = message.getHasMapping();
   if (f) {
     writer.writeBool(
       1,
@@ -1483,28 +1358,19 @@ proto.AddressMapperHasMappingResponse.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.AddressMapperHasMappingResponse} The clone.
- */
-proto.AddressMapperHasMappingResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.AddressMapperHasMappingResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bool has_mapping = 1;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.AddressMapperHasMappingResponse.prototype.getHasMapping = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.AddressMapperHasMappingResponse.prototype.setHasMapping = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 

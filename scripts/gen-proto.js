@@ -14,9 +14,6 @@ const protoFiles = [
   'transfer_gateway.proto',
   'address_mapper.proto',
   'coin.proto',
-  'dpos.proto',
-  'dposv2.proto',
-  'dposv3.proto',
   'sample_go_contract.proto',
   'user_deployer_whitelist.proto'
 ]

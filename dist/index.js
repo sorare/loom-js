@@ -41,8 +41,6 @@ exports.EthersSigner = solidity_helpers_1.EthersSigner;
 exports.soliditySha3 = solidity_helpers_1.soliditySha3;
 exports.getJsonRPCSignerAsync = solidity_helpers_1.getJsonRPCSignerAsync;
 exports.getMetamaskSigner = solidity_helpers_1.getMetamaskSigner;
-// export { DPOSUser } from './dpos-user'
-// export { DPOSUserV3 } from './dpos-user-v3'
 var gateway_user_1 = require("./gateway-user");
 exports.GatewayUser = gateway_user_1.GatewayUser;
 var crosschain_user_1 = require("./crosschain-user");

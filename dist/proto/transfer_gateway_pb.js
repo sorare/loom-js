@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -75,15 +77,16 @@ proto.TransferGatewayWithdrawalReceipt.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawalReceipt} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawalReceipt.toObject = function(includeInstance, msg) {
   var f, obj = {
     tokenOwner: (f = msg.getTokenOwner()) && proto_loom_pb.Address.toObject(includeInstance, f),
     tokenContract: (f = msg.getTokenContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    tokenKind: msg.getTokenKind(),
+    tokenKind: jspb.Message.getFieldWithDefault(msg, 3, 0),
     tokenId: (f = msg.getTokenId()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
     tokenAmount: (f = msg.getTokenAmount()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
-    withdrawalNonce: msg.getWithdrawalNonce(),
+    withdrawalNonce: jspb.Message.getFieldWithDefault(msg, 6, 0),
     oracleSignature: msg.getOracleSignature_asB64()
   };
 
@@ -163,35 +166,26 @@ proto.TransferGatewayWithdrawalReceipt.deserializeBinaryFromReader = function(ms
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawalReceipt} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawalReceipt.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawalReceipt.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawalReceipt} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawalReceipt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenOwner();
+  f = message.getTokenOwner();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -199,7 +193,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -207,14 +201,14 @@ proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenKind();
+  f = message.getTokenKind();
   if (f !== 0.0) {
     writer.writeEnum(
       3,
       f
     );
   }
-  f = this.getTokenId();
+  f = message.getTokenId();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -222,7 +216,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getTokenAmount();
+  f = message.getTokenAmount();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -230,14 +224,14 @@ proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getWithdrawalNonce();
+  f = message.getWithdrawalNonce();
   if (f !== 0) {
     writer.writeUint64(
       6,
       f
     );
   }
-  f = this.getOracleSignature_asU8();
+  f = message.getOracleSignature_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       7,
@@ -248,25 +242,16 @@ proto.TransferGatewayWithdrawalReceipt.prototype.serializeBinaryToWriter = funct
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawalReceipt} The clone.
- */
-proto.TransferGatewayWithdrawalReceipt.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawalReceipt} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_owner = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getTokenOwner = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setTokenOwner = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -279,7 +264,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.clearTokenOwner = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenOwner = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -288,15 +273,15 @@ proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenOwner = function() {
 
 /**
  * optional Address token_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -309,7 +294,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.clearTokenContract = function()
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -321,27 +306,27 @@ proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenContract = function() {
  * @return {!proto.TransferGatewayTokenKind}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getTokenKind = function() {
-  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {!proto.TransferGatewayTokenKind} value  */
+/** @param {!proto.TransferGatewayTokenKind} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setTokenKind = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
 /**
  * optional BigUInt token_id = 4;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getTokenId = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 4));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setTokenId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -354,7 +339,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.clearTokenId = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -363,15 +348,15 @@ proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenId = function() {
 
 /**
  * optional BigUInt token_amount = 5;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getTokenAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 5));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setTokenAmount = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -384,7 +369,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.clearTokenAmount = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenAmount = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -396,13 +381,13 @@ proto.TransferGatewayWithdrawalReceipt.prototype.hasTokenAmount = function() {
  * @return {number}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getWithdrawalNonce = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setWithdrawalNonce = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -411,7 +396,7 @@ proto.TransferGatewayWithdrawalReceipt.prototype.setWithdrawalNonce = function(v
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayWithdrawalReceipt.prototype.getOracleSignature = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -439,9 +424,9 @@ proto.TransferGatewayWithdrawalReceipt.prototype.getOracleSignature_asU8 = funct
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayWithdrawalReceipt.prototype.setOracleSignature = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -488,6 +473,7 @@ proto.TransferGatewayContractMappingConfirmed.prototype.toObject = function(opt_
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayContractMappingConfirmed} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayContractMappingConfirmed.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -549,35 +535,26 @@ proto.TransferGatewayContractMappingConfirmed.deserializeBinaryFromReader = func
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayContractMappingConfirmed} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayContractMappingConfirmed.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayContractMappingConfirmed.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayContractMappingConfirmed.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayContractMappingConfirmed} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayContractMappingConfirmed.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayContractMappingConfirmed.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getForeignContract();
+  f = message.getForeignContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -585,7 +562,7 @@ proto.TransferGatewayContractMappingConfirmed.prototype.serializeBinaryToWriter 
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getLocalContract();
+  f = message.getLocalContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -597,25 +574,16 @@ proto.TransferGatewayContractMappingConfirmed.prototype.serializeBinaryToWriter 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayContractMappingConfirmed} The clone.
- */
-proto.TransferGatewayContractMappingConfirmed.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayContractMappingConfirmed} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address foreign_contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayContractMappingConfirmed.prototype.getForeignContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayContractMappingConfirmed.prototype.setForeignContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -628,7 +596,7 @@ proto.TransferGatewayContractMappingConfirmed.prototype.clearForeignContract = f
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayContractMappingConfirmed.prototype.hasForeignContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -637,15 +605,15 @@ proto.TransferGatewayContractMappingConfirmed.prototype.hasForeignContract = fun
 
 /**
  * optional Address local_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayContractMappingConfirmed.prototype.getLocalContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayContractMappingConfirmed.prototype.setLocalContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -658,7 +626,7 @@ proto.TransferGatewayContractMappingConfirmed.prototype.clearLocalContract = fun
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayContractMappingConfirmed.prototype.hasLocalContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -708,12 +676,13 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.toObject = function(opt_inc
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayTokenWithdrawalSigned} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayTokenWithdrawalSigned.toObject = function(includeInstance, msg) {
   var f, obj = {
     tokenOwner: (f = msg.getTokenOwner()) && proto_loom_pb.Address.toObject(includeInstance, f),
     tokenContract: (f = msg.getTokenContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    tokenKind: msg.getTokenKind(),
+    tokenKind: jspb.Message.getFieldWithDefault(msg, 3, 0),
     tokenId: (f = msg.getTokenId()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
     tokenAmount: (f = msg.getTokenAmount()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
     sig: msg.getSig_asB64()
@@ -791,35 +760,26 @@ proto.TransferGatewayTokenWithdrawalSigned.deserializeBinaryFromReader = functio
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayTokenWithdrawalSigned} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayTokenWithdrawalSigned.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayTokenWithdrawalSigned.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayTokenWithdrawalSigned} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayTokenWithdrawalSigned.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenOwner();
+  f = message.getTokenOwner();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -827,7 +787,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = f
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -835,14 +795,14 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = f
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenKind();
+  f = message.getTokenKind();
   if (f !== 0.0) {
     writer.writeEnum(
       3,
       f
     );
   }
-  f = this.getTokenId();
+  f = message.getTokenId();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -850,7 +810,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = f
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getTokenAmount();
+  f = message.getTokenAmount();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -858,7 +818,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = f
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getSig_asU8();
+  f = message.getSig_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       6,
@@ -869,25 +829,16 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.serializeBinaryToWriter = f
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayTokenWithdrawalSigned} The clone.
- */
-proto.TransferGatewayTokenWithdrawalSigned.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayTokenWithdrawalSigned} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_owner = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getTokenOwner = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setTokenOwner = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -900,7 +851,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.clearTokenOwner = function(
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenOwner = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -909,15 +860,15 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenOwner = function() 
 
 /**
  * optional Address token_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -930,7 +881,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.clearTokenContract = functi
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -942,27 +893,27 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenContract = function
  * @return {!proto.TransferGatewayTokenKind}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getTokenKind = function() {
-  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {!proto.TransferGatewayTokenKind} value  */
+/** @param {!proto.TransferGatewayTokenKind} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setTokenKind = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
 /**
  * optional BigUInt token_id = 4;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getTokenId = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 4));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setTokenId = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -975,7 +926,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.clearTokenId = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenId = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -984,15 +935,15 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenId = function() {
 
 /**
  * optional BigUInt token_amount = 5;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getTokenAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 5));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setTokenAmount = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -1005,7 +956,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.clearTokenAmount = function
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenAmount = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -1017,7 +968,7 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.hasTokenAmount = function()
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.getSig = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -1045,9 +996,9 @@ proto.TransferGatewayTokenWithdrawalSigned.prototype.getSig_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayTokenWithdrawalSigned.prototype.setSig = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -1094,6 +1045,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.toObject = function(opt
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayAddContractMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayAddContractMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1165,35 +1117,26 @@ proto.TransferGatewayAddContractMappingRequest.deserializeBinaryFromReader = fun
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayAddContractMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayAddContractMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayAddContractMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayAddContractMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayAddContractMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayAddContractMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getForeignContract();
+  f = message.getForeignContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1201,7 +1144,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.serializeBinaryToWriter
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getLocalContract();
+  f = message.getLocalContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1209,14 +1152,14 @@ proto.TransferGatewayAddContractMappingRequest.prototype.serializeBinaryToWriter
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getForeignContractCreatorSig_asU8();
+  f = message.getForeignContractCreatorSig_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
       f
     );
   }
-  f = this.getForeignContractTxHash_asU8();
+  f = message.getForeignContractTxHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       4,
@@ -1227,25 +1170,16 @@ proto.TransferGatewayAddContractMappingRequest.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayAddContractMappingRequest} The clone.
- */
-proto.TransferGatewayAddContractMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayAddContractMappingRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address foreign_contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.getForeignContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayAddContractMappingRequest.prototype.setForeignContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1258,7 +1192,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.clearForeignContract = 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.hasForeignContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1267,15 +1201,15 @@ proto.TransferGatewayAddContractMappingRequest.prototype.hasForeignContract = fu
 
 /**
  * optional Address local_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.getLocalContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayAddContractMappingRequest.prototype.setLocalContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1288,7 +1222,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.clearLocalContract = fu
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.hasLocalContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1300,7 +1234,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.hasLocalContract = func
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.getForeignContractCreatorSig = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1328,9 +1262,9 @@ proto.TransferGatewayAddContractMappingRequest.prototype.getForeignContractCreat
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayAddContractMappingRequest.prototype.setForeignContractCreatorSig = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -1339,7 +1273,7 @@ proto.TransferGatewayAddContractMappingRequest.prototype.setForeignContractCreat
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayAddContractMappingRequest.prototype.getForeignContractTxHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -1367,9 +1301,9 @@ proto.TransferGatewayAddContractMappingRequest.prototype.getForeignContractTxHas
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayAddContractMappingRequest.prototype.setForeignContractTxHash = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -1423,6 +1357,7 @@ proto.TransferGatewayReclaimDepositorTokensRequest.prototype.toObject = function
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayReclaimDepositorTokensRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayReclaimDepositorTokensRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1467,8 +1402,7 @@ proto.TransferGatewayReclaimDepositorTokensRequest.deserializeBinaryFromReader =
     case 1:
       var value = new proto_loom_pb.Address;
       reader.readMessage(value,proto_loom_pb.Address.deserializeBinaryFromReader);
-      msg.getDepositorsList().push(value);
-      msg.setDepositorsList(msg.getDepositorsList());
+      msg.addDepositors(value);
       break;
     default:
       reader.skipField();
@@ -1480,35 +1414,26 @@ proto.TransferGatewayReclaimDepositorTokensRequest.deserializeBinaryFromReader =
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayReclaimDepositorTokensRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayReclaimDepositorTokensRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayReclaimDepositorTokensRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayReclaimDepositorTokensRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayReclaimDepositorTokensRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayReclaimDepositorTokensRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayReclaimDepositorTokensRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getDepositorsList();
+  f = message.getDepositorsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1520,29 +1445,28 @@ proto.TransferGatewayReclaimDepositorTokensRequest.prototype.serializeBinaryToWr
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayReclaimDepositorTokensRequest} The clone.
- */
-proto.TransferGatewayReclaimDepositorTokensRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayReclaimDepositorTokensRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Address depositors = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.Address>}
+ * @return {!Array<!proto.Address>}
  */
 proto.TransferGatewayReclaimDepositorTokensRequest.prototype.getDepositorsList = function() {
-  return /** @type{!Array.<!proto.Address>} */ (
+  return /** @type{!Array<!proto.Address>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {Array.<!proto.Address>} value  */
+/** @param {!Array<!proto.Address>} value */
 proto.TransferGatewayReclaimDepositorTokensRequest.prototype.setDepositorsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.Address=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.Address}
+ */
+proto.TransferGatewayReclaimDepositorTokensRequest.prototype.addDepositors = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.Address, opt_index);
 };
 
 
@@ -1594,6 +1518,7 @@ proto.TransferGatewayReclaimContractTokensRequest.prototype.toObject = function(
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayReclaimContractTokensRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayReclaimContractTokensRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1649,35 +1574,26 @@ proto.TransferGatewayReclaimContractTokensRequest.deserializeBinaryFromReader = 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayReclaimContractTokensRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayReclaimContractTokensRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayReclaimContractTokensRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayReclaimContractTokensRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayReclaimContractTokensRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayReclaimContractTokensRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayReclaimContractTokensRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1689,25 +1605,16 @@ proto.TransferGatewayReclaimContractTokensRequest.prototype.serializeBinaryToWri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayReclaimContractTokensRequest} The clone.
- */
-proto.TransferGatewayReclaimContractTokensRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayReclaimContractTokensRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayReclaimContractTokensRequest.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayReclaimContractTokensRequest.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1720,7 +1627,7 @@ proto.TransferGatewayReclaimContractTokensRequest.prototype.clearTokenContract =
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayReclaimContractTokensRequest.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1770,11 +1677,12 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.toObject = function(opt_incl
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawTokenRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     tokenContract: (f = msg.getTokenContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    tokenKind: msg.getTokenKind(),
+    tokenKind: jspb.Message.getFieldWithDefault(msg, 2, 0),
     tokenId: (f = msg.getTokenId()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
     tokenAmount: (f = msg.getTokenAmount()) && proto_loom_pb.BigUInt.toObject(includeInstance, f),
     recipient: (f = msg.getRecipient()) && proto_loom_pb.Address.toObject(includeInstance, f)
@@ -1848,35 +1756,26 @@ proto.TransferGatewayWithdrawTokenRequest.deserializeBinaryFromReader = function
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawTokenRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawTokenRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawTokenRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawTokenRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1884,14 +1783,14 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinaryToWriter = fu
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenKind();
+  f = message.getTokenKind();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
       f
     );
   }
-  f = this.getTokenId();
+  f = message.getTokenId();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -1899,7 +1798,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinaryToWriter = fu
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getTokenAmount();
+  f = message.getTokenAmount();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -1907,7 +1806,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinaryToWriter = fu
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getRecipient();
+  f = message.getRecipient();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -1919,25 +1818,16 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.serializeBinaryToWriter = fu
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawTokenRequest} The clone.
- */
-proto.TransferGatewayWithdrawTokenRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawTokenRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawTokenRequest.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1950,7 +1840,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.clearTokenContract = functio
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1962,27 +1852,27 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenContract = function(
  * @return {!proto.TransferGatewayTokenKind}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.getTokenKind = function() {
-  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {!proto.TransferGatewayTokenKind} value  */
+/** @param {!proto.TransferGatewayTokenKind} value */
 proto.TransferGatewayWithdrawTokenRequest.prototype.setTokenKind = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
 /**
  * optional BigUInt token_id = 3;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.getTokenId = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 3));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawTokenRequest.prototype.setTokenId = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -1995,7 +1885,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.clearTokenId = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenId = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -2004,15 +1894,15 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenId = function() {
 
 /**
  * optional BigUInt token_amount = 4;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.getTokenAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 4));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawTokenRequest.prototype.setTokenAmount = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -2025,7 +1915,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.clearTokenAmount = function(
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenAmount = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -2034,15 +1924,15 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.hasTokenAmount = function() 
 
 /**
  * optional Address recipient = 5;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.getRecipient = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 5));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawTokenRequest.prototype.setRecipient = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -2055,7 +1945,7 @@ proto.TransferGatewayWithdrawTokenRequest.prototype.clearRecipient = function() 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawTokenRequest.prototype.hasRecipient = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -2105,6 +1995,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.toObject = function(opt_includ
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawETHRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawETHRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2172,35 +2063,26 @@ proto.TransferGatewayWithdrawETHRequest.deserializeBinaryFromReader = function(m
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawETHRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawETHRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawETHRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawETHRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawETHRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawETHRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getAmount();
+  f = message.getAmount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2208,7 +2090,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.serializeBinaryToWriter = func
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getMainnetGateway();
+  f = message.getMainnetGateway();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -2216,7 +2098,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.serializeBinaryToWriter = func
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getRecipient();
+  f = message.getRecipient();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -2228,25 +2110,16 @@ proto.TransferGatewayWithdrawETHRequest.prototype.serializeBinaryToWriter = func
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawETHRequest} The clone.
- */
-proto.TransferGatewayWithdrawETHRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawETHRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional BigUInt amount = 1;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.getAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 1));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawETHRequest.prototype.setAmount = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2259,7 +2132,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.clearAmount = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.hasAmount = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2268,15 +2141,15 @@ proto.TransferGatewayWithdrawETHRequest.prototype.hasAmount = function() {
 
 /**
  * optional Address mainnet_gateway = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.getMainnetGateway = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawETHRequest.prototype.setMainnetGateway = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -2289,7 +2162,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.clearMainnetGateway = function
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.hasMainnetGateway = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -2298,15 +2171,15 @@ proto.TransferGatewayWithdrawETHRequest.prototype.hasMainnetGateway = function()
 
 /**
  * optional Address recipient = 3;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.getRecipient = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 3));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawETHRequest.prototype.setRecipient = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -2319,7 +2192,7 @@ proto.TransferGatewayWithdrawETHRequest.prototype.clearRecipient = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawETHRequest.prototype.hasRecipient = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -2369,6 +2242,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.toObject = function(opt_i
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawLoomCoinRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2436,35 +2310,26 @@ proto.TransferGatewayWithdrawLoomCoinRequest.deserializeBinaryFromReader = funct
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawLoomCoinRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawLoomCoinRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawLoomCoinRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawLoomCoinRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawLoomCoinRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawLoomCoinRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getAmount();
+  f = message.getAmount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2472,7 +2337,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.serializeBinaryToWriter =
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -2480,7 +2345,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.serializeBinaryToWriter =
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getRecipient();
+  f = message.getRecipient();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -2492,25 +2357,16 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.serializeBinaryToWriter =
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawLoomCoinRequest} The clone.
- */
-proto.TransferGatewayWithdrawLoomCoinRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawLoomCoinRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional BigUInt amount = 1;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.getAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 1));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.setAmount = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2523,7 +2379,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.clearAmount = function() 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.hasAmount = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2532,15 +2388,15 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.hasAmount = function() {
 
 /**
  * optional Address token_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -2553,7 +2409,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.clearTokenContract = func
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -2562,15 +2418,15 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.hasTokenContract = functi
 
 /**
  * optional Address recipient = 3;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.getRecipient = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 3));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.setRecipient = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -2583,7 +2439,7 @@ proto.TransferGatewayWithdrawLoomCoinRequest.prototype.clearRecipient = function
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawLoomCoinRequest.prototype.hasRecipient = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -2633,6 +2489,7 @@ proto.TransferGatewayWithdrawalReceiptRequest.prototype.toObject = function(opt_
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawalReceiptRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawalReceiptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2688,35 +2545,26 @@ proto.TransferGatewayWithdrawalReceiptRequest.deserializeBinaryFromReader = func
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawalReceiptRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawalReceiptRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawalReceiptRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawalReceiptRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawalReceiptRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawalReceiptRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawalReceiptRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getOwner();
+  f = message.getOwner();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2728,25 +2576,16 @@ proto.TransferGatewayWithdrawalReceiptRequest.prototype.serializeBinaryToWriter 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawalReceiptRequest} The clone.
- */
-proto.TransferGatewayWithdrawalReceiptRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawalReceiptRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address owner = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayWithdrawalReceiptRequest.prototype.getOwner = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayWithdrawalReceiptRequest.prototype.setOwner = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2759,7 +2598,7 @@ proto.TransferGatewayWithdrawalReceiptRequest.prototype.clearOwner = function() 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceiptRequest.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2809,6 +2648,7 @@ proto.TransferGatewayWithdrawalReceiptResponse.prototype.toObject = function(opt
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayWithdrawalReceiptResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayWithdrawalReceiptResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2864,35 +2704,26 @@ proto.TransferGatewayWithdrawalReceiptResponse.deserializeBinaryFromReader = fun
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayWithdrawalReceiptResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayWithdrawalReceiptResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayWithdrawalReceiptResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayWithdrawalReceiptResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayWithdrawalReceiptResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayWithdrawalReceiptResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayWithdrawalReceiptResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getReceipt();
+  f = message.getReceipt();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2904,25 +2735,16 @@ proto.TransferGatewayWithdrawalReceiptResponse.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayWithdrawalReceiptResponse} The clone.
- */
-proto.TransferGatewayWithdrawalReceiptResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayWithdrawalReceiptResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional TransferGatewayWithdrawalReceipt receipt = 1;
- * @return {proto.TransferGatewayWithdrawalReceipt}
+ * @return {?proto.TransferGatewayWithdrawalReceipt}
  */
 proto.TransferGatewayWithdrawalReceiptResponse.prototype.getReceipt = function() {
-  return /** @type{proto.TransferGatewayWithdrawalReceipt} */ (
+  return /** @type{?proto.TransferGatewayWithdrawalReceipt} */ (
     jspb.Message.getWrapperField(this, proto.TransferGatewayWithdrawalReceipt, 1));
 };
 
 
-/** @param {proto.TransferGatewayWithdrawalReceipt|undefined} value  */
+/** @param {?proto.TransferGatewayWithdrawalReceipt|undefined} value */
 proto.TransferGatewayWithdrawalReceiptResponse.prototype.setReceipt = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2935,7 +2757,7 @@ proto.TransferGatewayWithdrawalReceiptResponse.prototype.clearReceipt = function
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayWithdrawalReceiptResponse.prototype.hasReceipt = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2985,6 +2807,7 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.toObject = functi
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayConfirmWithdrawalReceiptRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3050,35 +2873,26 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.deserializeBinaryFromReader
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayConfirmWithdrawalReceiptRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayConfirmWithdrawalReceiptRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayConfirmWithdrawalReceiptRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayConfirmWithdrawalReceiptRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayConfirmWithdrawalReceiptRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenOwner();
+  f = message.getTokenOwner();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3086,14 +2900,14 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.serializeBinaryTo
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getOracleSignature_asU8();
+  f = message.getOracleSignature_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getWithdrawalHash_asU8();
+  f = message.getWithdrawalHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
@@ -3104,25 +2918,16 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.serializeBinaryTo
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayConfirmWithdrawalReceiptRequest} The clone.
- */
-proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayConfirmWithdrawalReceiptRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_owner = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.getTokenOwner = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.setTokenOwner = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3135,7 +2940,7 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.clearTokenOwner =
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.hasTokenOwner = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3147,7 +2952,7 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.hasTokenOwner = f
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.getOracleSignature = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3175,9 +2980,9 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.getOracleSignatur
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.setOracleSignature = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -3186,7 +2991,7 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.setOracleSignatur
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.getWithdrawalHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -3214,9 +3019,9 @@ proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.getWithdrawalHash
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayConfirmWithdrawalReceiptRequest.prototype.setWithdrawalHash = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -3263,6 +3068,7 @@ proto.TransferGatewayTokenAmount.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayTokenAmount} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayTokenAmount.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3324,35 +3130,26 @@ proto.TransferGatewayTokenAmount.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayTokenAmount} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayTokenAmount.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayTokenAmount.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayTokenAmount.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayTokenAmount} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayTokenAmount.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayTokenAmount.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenId();
+  f = message.getTokenId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3360,7 +3157,7 @@ proto.TransferGatewayTokenAmount.prototype.serializeBinaryToWriter = function (w
       proto_loom_pb.BigUInt.serializeBinaryToWriter
     );
   }
-  f = this.getTokenAmount();
+  f = message.getTokenAmount();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -3372,25 +3169,16 @@ proto.TransferGatewayTokenAmount.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayTokenAmount} The clone.
- */
-proto.TransferGatewayTokenAmount.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayTokenAmount} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional BigUInt token_id = 1;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayTokenAmount.prototype.getTokenId = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 1));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayTokenAmount.prototype.setTokenId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3403,7 +3191,7 @@ proto.TransferGatewayTokenAmount.prototype.clearTokenId = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenAmount.prototype.hasTokenId = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3412,15 +3200,15 @@ proto.TransferGatewayTokenAmount.prototype.hasTokenId = function() {
 
 /**
  * optional BigUInt token_amount = 2;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.TransferGatewayTokenAmount.prototype.getTokenAmount = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 2));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.TransferGatewayTokenAmount.prototype.setTokenAmount = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -3433,7 +3221,7 @@ proto.TransferGatewayTokenAmount.prototype.clearTokenAmount = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayTokenAmount.prototype.hasTokenAmount = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -3490,11 +3278,12 @@ proto.TransferGatewayUnclaimedToken.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayUnclaimedToken} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayUnclaimedToken.toObject = function(includeInstance, msg) {
   var f, obj = {
     tokenContract: (f = msg.getTokenContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    tokenKind: msg.getTokenKind(),
+    tokenKind: jspb.Message.getFieldWithDefault(msg, 2, 0),
     amountsList: jspb.Message.toObjectList(msg.getAmountsList(),
     proto.TransferGatewayTokenAmount.toObject, includeInstance)
   };
@@ -3545,8 +3334,7 @@ proto.TransferGatewayUnclaimedToken.deserializeBinaryFromReader = function(msg, 
     case 3:
       var value = new proto.TransferGatewayTokenAmount;
       reader.readMessage(value,proto.TransferGatewayTokenAmount.deserializeBinaryFromReader);
-      msg.getAmountsList().push(value);
-      msg.setAmountsList(msg.getAmountsList());
+      msg.addAmounts(value);
       break;
     default:
       reader.skipField();
@@ -3558,35 +3346,26 @@ proto.TransferGatewayUnclaimedToken.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayUnclaimedToken} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayUnclaimedToken.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayUnclaimedToken.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayUnclaimedToken.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayUnclaimedToken} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayUnclaimedToken.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayUnclaimedToken.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTokenContract();
+  f = message.getTokenContract();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3594,14 +3373,14 @@ proto.TransferGatewayUnclaimedToken.prototype.serializeBinaryToWriter = function
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTokenKind();
+  f = message.getTokenKind();
   if (f !== 0.0) {
     writer.writeEnum(
       2,
       f
     );
   }
-  f = this.getAmountsList();
+  f = message.getAmountsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
@@ -3613,25 +3392,16 @@ proto.TransferGatewayUnclaimedToken.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayUnclaimedToken} The clone.
- */
-proto.TransferGatewayUnclaimedToken.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayUnclaimedToken} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address token_contract = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayUnclaimedToken.prototype.getTokenContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayUnclaimedToken.prototype.setTokenContract = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3644,7 +3414,7 @@ proto.TransferGatewayUnclaimedToken.prototype.clearTokenContract = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayUnclaimedToken.prototype.hasTokenContract = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3656,31 +3426,39 @@ proto.TransferGatewayUnclaimedToken.prototype.hasTokenContract = function() {
  * @return {!proto.TransferGatewayTokenKind}
  */
 proto.TransferGatewayUnclaimedToken.prototype.getTokenKind = function() {
-  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {!proto.TransferGatewayTokenKind} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {!proto.TransferGatewayTokenKind} value  */
+/** @param {!proto.TransferGatewayTokenKind} value */
 proto.TransferGatewayUnclaimedToken.prototype.setTokenKind = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
 /**
  * repeated TransferGatewayTokenAmount amounts = 3;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.TransferGatewayTokenAmount>}
+ * @return {!Array<!proto.TransferGatewayTokenAmount>}
  */
 proto.TransferGatewayUnclaimedToken.prototype.getAmountsList = function() {
-  return /** @type{!Array.<!proto.TransferGatewayTokenAmount>} */ (
+  return /** @type{!Array<!proto.TransferGatewayTokenAmount>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.TransferGatewayTokenAmount, 3));
 };
 
 
-/** @param {Array.<!proto.TransferGatewayTokenAmount>} value  */
+/** @param {!Array<!proto.TransferGatewayTokenAmount>} value */
 proto.TransferGatewayUnclaimedToken.prototype.setAmountsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.TransferGatewayTokenAmount=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.TransferGatewayTokenAmount}
+ */
+proto.TransferGatewayUnclaimedToken.prototype.addAmounts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.TransferGatewayTokenAmount, opt_index);
 };
 
 
@@ -3732,6 +3510,7 @@ proto.TransferGatewayGetUnclaimedTokensRequest.prototype.toObject = function(opt
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayGetUnclaimedTokensRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayGetUnclaimedTokensRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3787,35 +3566,26 @@ proto.TransferGatewayGetUnclaimedTokensRequest.deserializeBinaryFromReader = fun
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayGetUnclaimedTokensRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayGetUnclaimedTokensRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayGetUnclaimedTokensRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayGetUnclaimedTokensRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayGetUnclaimedTokensRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayGetUnclaimedTokensRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayGetUnclaimedTokensRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getOwner();
+  f = message.getOwner();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3827,25 +3597,16 @@ proto.TransferGatewayGetUnclaimedTokensRequest.prototype.serializeBinaryToWriter
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayGetUnclaimedTokensRequest} The clone.
- */
-proto.TransferGatewayGetUnclaimedTokensRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayGetUnclaimedTokensRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address owner = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayGetUnclaimedTokensRequest.prototype.getOwner = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayGetUnclaimedTokensRequest.prototype.setOwner = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3858,7 +3619,7 @@ proto.TransferGatewayGetUnclaimedTokensRequest.prototype.clearOwner = function()
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayGetUnclaimedTokensRequest.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3915,6 +3676,7 @@ proto.TransferGatewayGetUnclaimedTokensResponse.prototype.toObject = function(op
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayGetUnclaimedTokensResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayGetUnclaimedTokensResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3959,8 +3721,7 @@ proto.TransferGatewayGetUnclaimedTokensResponse.deserializeBinaryFromReader = fu
     case 1:
       var value = new proto.TransferGatewayUnclaimedToken;
       reader.readMessage(value,proto.TransferGatewayUnclaimedToken.deserializeBinaryFromReader);
-      msg.getUnclaimedTokensList().push(value);
-      msg.setUnclaimedTokensList(msg.getUnclaimedTokensList());
+      msg.addUnclaimedTokens(value);
       break;
     default:
       reader.skipField();
@@ -3972,35 +3733,26 @@ proto.TransferGatewayGetUnclaimedTokensResponse.deserializeBinaryFromReader = fu
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayGetUnclaimedTokensResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayGetUnclaimedTokensResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayGetUnclaimedTokensResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayGetUnclaimedTokensResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayGetUnclaimedTokensResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayGetUnclaimedTokensResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayGetUnclaimedTokensResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getUnclaimedTokensList();
+  f = message.getUnclaimedTokensList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -4012,29 +3764,28 @@ proto.TransferGatewayGetUnclaimedTokensResponse.prototype.serializeBinaryToWrite
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayGetUnclaimedTokensResponse} The clone.
- */
-proto.TransferGatewayGetUnclaimedTokensResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayGetUnclaimedTokensResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated TransferGatewayUnclaimedToken unclaimed_tokens = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.TransferGatewayUnclaimedToken>}
+ * @return {!Array<!proto.TransferGatewayUnclaimedToken>}
  */
 proto.TransferGatewayGetUnclaimedTokensResponse.prototype.getUnclaimedTokensList = function() {
-  return /** @type{!Array.<!proto.TransferGatewayUnclaimedToken>} */ (
+  return /** @type{!Array<!proto.TransferGatewayUnclaimedToken>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.TransferGatewayUnclaimedToken, 1));
 };
 
 
-/** @param {Array.<!proto.TransferGatewayUnclaimedToken>} value  */
+/** @param {!Array<!proto.TransferGatewayUnclaimedToken>} value */
 proto.TransferGatewayGetUnclaimedTokensResponse.prototype.setUnclaimedTokensList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.TransferGatewayUnclaimedToken=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.TransferGatewayUnclaimedToken}
+ */
+proto.TransferGatewayGetUnclaimedTokensResponse.prototype.addUnclaimedTokens = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.TransferGatewayUnclaimedToken, opt_index);
 };
 
 
@@ -4086,6 +3837,7 @@ proto.TransferGatewayResubmitWithdrawalRequest.prototype.toObject = function(opt
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayResubmitWithdrawalRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayResubmitWithdrawalRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4136,43 +3888,25 @@ proto.TransferGatewayResubmitWithdrawalRequest.deserializeBinaryFromReader = fun
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayResubmitWithdrawalRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayResubmitWithdrawalRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayResubmitWithdrawalRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayResubmitWithdrawalRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayResubmitWithdrawalRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayResubmitWithdrawalRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayResubmitWithdrawalRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayResubmitWithdrawalRequest} The clone.
- */
-proto.TransferGatewayResubmitWithdrawalRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayResubmitWithdrawalRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -4219,6 +3953,7 @@ proto.TransferGatewayListContractMappingRequest.prototype.toObject = function(op
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayListContractMappingRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayListContractMappingRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4269,43 +4004,25 @@ proto.TransferGatewayListContractMappingRequest.deserializeBinaryFromReader = fu
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayListContractMappingRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayListContractMappingRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayListContractMappingRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayListContractMappingRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayListContractMappingRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayListContractMappingRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayListContractMappingRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayListContractMappingRequest} The clone.
- */
-proto.TransferGatewayListContractMappingRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayListContractMappingRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -4359,6 +4076,7 @@ proto.TransferGatewayListContractMappingResponse.prototype.toObject = function(o
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayListContractMappingResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayListContractMappingResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4405,14 +4123,12 @@ proto.TransferGatewayListContractMappingResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new proto.TransferGatewayContractAddressMapping;
       reader.readMessage(value,proto.TransferGatewayContractAddressMapping.deserializeBinaryFromReader);
-      msg.getConfimedMappingsList().push(value);
-      msg.setConfimedMappingsList(msg.getConfimedMappingsList());
+      msg.addConfimedMappings(value);
       break;
     case 2:
       var value = new proto.TransferGatewayPendingContractMapping;
       reader.readMessage(value,proto.TransferGatewayPendingContractMapping.deserializeBinaryFromReader);
-      msg.getPendingMappingsList().push(value);
-      msg.setPendingMappingsList(msg.getPendingMappingsList());
+      msg.addPendingMappings(value);
       break;
     default:
       reader.skipField();
@@ -4424,35 +4140,26 @@ proto.TransferGatewayListContractMappingResponse.deserializeBinaryFromReader = f
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayListContractMappingResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayListContractMappingResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayListContractMappingResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayListContractMappingResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayListContractMappingResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayListContractMappingResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayListContractMappingResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getConfimedMappingsList();
+  f = message.getConfimedMappingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -4460,7 +4167,7 @@ proto.TransferGatewayListContractMappingResponse.prototype.serializeBinaryToWrit
       proto.TransferGatewayContractAddressMapping.serializeBinaryToWriter
     );
   }
-  f = this.getPendingMappingsList();
+  f = message.getPendingMappingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -4472,29 +4179,28 @@ proto.TransferGatewayListContractMappingResponse.prototype.serializeBinaryToWrit
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayListContractMappingResponse} The clone.
- */
-proto.TransferGatewayListContractMappingResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayListContractMappingResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated TransferGatewayContractAddressMapping confimed_mappings = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.TransferGatewayContractAddressMapping>}
+ * @return {!Array<!proto.TransferGatewayContractAddressMapping>}
  */
 proto.TransferGatewayListContractMappingResponse.prototype.getConfimedMappingsList = function() {
-  return /** @type{!Array.<!proto.TransferGatewayContractAddressMapping>} */ (
+  return /** @type{!Array<!proto.TransferGatewayContractAddressMapping>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.TransferGatewayContractAddressMapping, 1));
 };
 
 
-/** @param {Array.<!proto.TransferGatewayContractAddressMapping>} value  */
+/** @param {!Array<!proto.TransferGatewayContractAddressMapping>} value */
 proto.TransferGatewayListContractMappingResponse.prototype.setConfimedMappingsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.TransferGatewayContractAddressMapping=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.TransferGatewayContractAddressMapping}
+ */
+proto.TransferGatewayListContractMappingResponse.prototype.addConfimedMappings = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.TransferGatewayContractAddressMapping, opt_index);
 };
 
 
@@ -4505,19 +4211,27 @@ proto.TransferGatewayListContractMappingResponse.prototype.clearConfimedMappings
 
 /**
  * repeated TransferGatewayPendingContractMapping pending_mappings = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.TransferGatewayPendingContractMapping>}
+ * @return {!Array<!proto.TransferGatewayPendingContractMapping>}
  */
 proto.TransferGatewayListContractMappingResponse.prototype.getPendingMappingsList = function() {
-  return /** @type{!Array.<!proto.TransferGatewayPendingContractMapping>} */ (
+  return /** @type{!Array<!proto.TransferGatewayPendingContractMapping>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.TransferGatewayPendingContractMapping, 2));
 };
 
 
-/** @param {Array.<!proto.TransferGatewayPendingContractMapping>} value  */
+/** @param {!Array<!proto.TransferGatewayPendingContractMapping>} value */
 proto.TransferGatewayListContractMappingResponse.prototype.setPendingMappingsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.TransferGatewayPendingContractMapping=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.TransferGatewayPendingContractMapping}
+ */
+proto.TransferGatewayListContractMappingResponse.prototype.addPendingMappings = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.TransferGatewayPendingContractMapping, opt_index);
 };
 
 
@@ -4569,6 +4283,7 @@ proto.TransferGatewayContractAddressMapping.prototype.toObject = function(opt_in
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayContractAddressMapping} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayContractAddressMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -4630,35 +4345,26 @@ proto.TransferGatewayContractAddressMapping.deserializeBinaryFromReader = functi
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayContractAddressMapping} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayContractAddressMapping.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayContractAddressMapping.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayContractAddressMapping.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayContractAddressMapping} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayContractAddressMapping.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayContractAddressMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getFrom();
+  f = message.getFrom();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -4666,7 +4372,7 @@ proto.TransferGatewayContractAddressMapping.prototype.serializeBinaryToWriter = 
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getTo();
+  f = message.getTo();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -4678,25 +4384,16 @@ proto.TransferGatewayContractAddressMapping.prototype.serializeBinaryToWriter = 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayContractAddressMapping} The clone.
- */
-proto.TransferGatewayContractAddressMapping.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayContractAddressMapping} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address from = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayContractAddressMapping.prototype.getFrom = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayContractAddressMapping.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -4709,7 +4406,7 @@ proto.TransferGatewayContractAddressMapping.prototype.clearFrom = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayContractAddressMapping.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -4718,15 +4415,15 @@ proto.TransferGatewayContractAddressMapping.prototype.hasFrom = function() {
 
 /**
  * optional Address to = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayContractAddressMapping.prototype.getTo = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayContractAddressMapping.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -4739,7 +4436,7 @@ proto.TransferGatewayContractAddressMapping.prototype.clearTo = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayContractAddressMapping.prototype.hasTo = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -4789,10 +4486,11 @@ proto.TransferGatewayPendingContractMapping.prototype.toObject = function(opt_in
  *     http://goto/soy-param-migration
  * @param {!proto.TransferGatewayPendingContractMapping} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TransferGatewayPendingContractMapping.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId(),
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     foreignContract: (f = msg.getForeignContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
     localContract: (f = msg.getLocalContract()) && proto_loom_pb.Address.toObject(includeInstance, f),
     foreignContractCreator: (f = msg.getForeignContractCreator()) && proto_loom_pb.Address.toObject(includeInstance, f),
@@ -4866,42 +4564,33 @@ proto.TransferGatewayPendingContractMapping.deserializeBinaryFromReader = functi
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TransferGatewayPendingContractMapping} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TransferGatewayPendingContractMapping.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TransferGatewayPendingContractMapping.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TransferGatewayPendingContractMapping.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TransferGatewayPendingContractMapping} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TransferGatewayPendingContractMapping.prototype.serializeBinaryToWriter = function (writer) {
+proto.TransferGatewayPendingContractMapping.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getId();
+  f = message.getId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = this.getForeignContract();
+  f = message.getForeignContract();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -4909,7 +4598,7 @@ proto.TransferGatewayPendingContractMapping.prototype.serializeBinaryToWriter = 
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getLocalContract();
+  f = message.getLocalContract();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -4917,7 +4606,7 @@ proto.TransferGatewayPendingContractMapping.prototype.serializeBinaryToWriter = 
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getForeignContractCreator();
+  f = message.getForeignContractCreator();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -4925,7 +4614,7 @@ proto.TransferGatewayPendingContractMapping.prototype.serializeBinaryToWriter = 
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getForeignContractTxHash_asU8();
+  f = message.getForeignContractTxHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       5,
@@ -4936,40 +4625,31 @@ proto.TransferGatewayPendingContractMapping.prototype.serializeBinaryToWriter = 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TransferGatewayPendingContractMapping} The clone.
- */
-proto.TransferGatewayPendingContractMapping.prototype.cloneMessage = function() {
-  return /** @type {!proto.TransferGatewayPendingContractMapping} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional uint64 ID = 1;
  * @return {number}
  */
 proto.TransferGatewayPendingContractMapping.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.TransferGatewayPendingContractMapping.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
  * optional Address foreign_contract = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayPendingContractMapping.prototype.getForeignContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayPendingContractMapping.prototype.setForeignContract = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -4982,7 +4662,7 @@ proto.TransferGatewayPendingContractMapping.prototype.clearForeignContract = fun
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayPendingContractMapping.prototype.hasForeignContract = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -4991,15 +4671,15 @@ proto.TransferGatewayPendingContractMapping.prototype.hasForeignContract = funct
 
 /**
  * optional Address local_contract = 3;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayPendingContractMapping.prototype.getLocalContract = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 3));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayPendingContractMapping.prototype.setLocalContract = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -5012,7 +4692,7 @@ proto.TransferGatewayPendingContractMapping.prototype.clearLocalContract = funct
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayPendingContractMapping.prototype.hasLocalContract = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -5021,15 +4701,15 @@ proto.TransferGatewayPendingContractMapping.prototype.hasLocalContract = functio
 
 /**
  * optional Address foreign_contract_creator = 4;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.TransferGatewayPendingContractMapping.prototype.getForeignContractCreator = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 4));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.TransferGatewayPendingContractMapping.prototype.setForeignContractCreator = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
@@ -5042,7 +4722,7 @@ proto.TransferGatewayPendingContractMapping.prototype.clearForeignContractCreato
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.TransferGatewayPendingContractMapping.prototype.hasForeignContractCreator = function() {
   return jspb.Message.getField(this, 4) != null;
@@ -5054,7 +4734,7 @@ proto.TransferGatewayPendingContractMapping.prototype.hasForeignContractCreator 
  * @return {!(string|Uint8Array)}
  */
 proto.TransferGatewayPendingContractMapping.prototype.getForeignContractTxHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -5082,9 +4762,9 @@ proto.TransferGatewayPendingContractMapping.prototype.getForeignContractTxHash_a
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.TransferGatewayPendingContractMapping.prototype.setForeignContractTxHash = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 

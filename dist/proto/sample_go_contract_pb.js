@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -54,13 +56,14 @@ proto.SampleGoContractNestedEvmRequest.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.SampleGoContractNestedEvmRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.SampleGoContractNestedEvmRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     innerEmitter: (f = msg.getInnerEmitter()) && proto_loom_pb.Address.toObject(includeInstance, f),
     outerEmitter: (f = msg.getOuterEmitter()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    innerEmitterValue: msg.getInnerEmitterValue(),
-    outerEmitterValue: msg.getOuterEmitterValue()
+    innerEmitterValue: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    outerEmitterValue: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -125,35 +128,26 @@ proto.SampleGoContractNestedEvmRequest.deserializeBinaryFromReader = function(ms
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.SampleGoContractNestedEvmRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.SampleGoContractNestedEvmRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.SampleGoContractNestedEvmRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.SampleGoContractNestedEvmRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.SampleGoContractNestedEvmRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.SampleGoContractNestedEvmRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getInnerEmitter();
+  f = message.getInnerEmitter();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -161,7 +155,7 @@ proto.SampleGoContractNestedEvmRequest.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getOuterEmitter();
+  f = message.getOuterEmitter();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -169,14 +163,14 @@ proto.SampleGoContractNestedEvmRequest.prototype.serializeBinaryToWriter = funct
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getInnerEmitterValue();
+  f = message.getInnerEmitterValue();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = this.getOuterEmitterValue();
+  f = message.getOuterEmitterValue();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -187,25 +181,16 @@ proto.SampleGoContractNestedEvmRequest.prototype.serializeBinaryToWriter = funct
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.SampleGoContractNestedEvmRequest} The clone.
- */
-proto.SampleGoContractNestedEvmRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.SampleGoContractNestedEvmRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Address inner_emitter = 1;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.getInnerEmitter = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 1));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.SampleGoContractNestedEvmRequest.prototype.setInnerEmitter = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -218,7 +203,7 @@ proto.SampleGoContractNestedEvmRequest.prototype.clearInnerEmitter = function() 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.hasInnerEmitter = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -227,15 +212,15 @@ proto.SampleGoContractNestedEvmRequest.prototype.hasInnerEmitter = function() {
 
 /**
  * optional Address outer_emitter = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.getOuterEmitter = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.SampleGoContractNestedEvmRequest.prototype.setOuterEmitter = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -248,7 +233,7 @@ proto.SampleGoContractNestedEvmRequest.prototype.clearOuterEmitter = function() 
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.hasOuterEmitter = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -260,13 +245,13 @@ proto.SampleGoContractNestedEvmRequest.prototype.hasOuterEmitter = function() {
  * @return {number}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.getInnerEmitterValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.SampleGoContractNestedEvmRequest.prototype.setInnerEmitterValue = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -275,13 +260,13 @@ proto.SampleGoContractNestedEvmRequest.prototype.setInnerEmitterValue = function
  * @return {number}
  */
 proto.SampleGoContractNestedEvmRequest.prototype.getOuterEmitterValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.SampleGoContractNestedEvmRequest.prototype.setOuterEmitterValue = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

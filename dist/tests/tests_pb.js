@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -57,11 +59,12 @@ proto.MapEntry.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.MapEntry} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.MapEntry.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: msg.getKey(),
-    value: msg.getValue()
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -116,42 +119,33 @@ proto.MapEntry.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.MapEntry} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.MapEntry.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.MapEntry.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.MapEntry.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.MapEntry} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.MapEntry.prototype.serializeBinaryToWriter = function (writer) {
+proto.MapEntry.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getKey();
+  f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getValue();
+  f = message.getValue();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -162,26 +156,17 @@ proto.MapEntry.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.MapEntry} The clone.
- */
-proto.MapEntry.prototype.cloneMessage = function() {
-  return /** @type {!proto.MapEntry} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string key = 1;
  * @return {string}
  */
 proto.MapEntry.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.MapEntry.prototype.setKey = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -190,13 +175,13 @@ proto.MapEntry.prototype.setKey = function(value) {
  * @return {string}
  */
 proto.MapEntry.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.MapEntry.prototype.setValue = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -243,10 +228,11 @@ proto.HelloRequest.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.HelloRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.HelloRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pb_in: msg.getIn()
+    pb_in: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -297,35 +283,26 @@ proto.HelloRequest.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.HelloRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.HelloRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.HelloRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.HelloRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.HelloRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.HelloRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.HelloRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getIn();
+  f = message.getIn();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -336,26 +313,17 @@ proto.HelloRequest.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.HelloRequest} The clone.
- */
-proto.HelloRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.HelloRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string in = 1;
  * @return {string}
  */
 proto.HelloRequest.prototype.getIn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.HelloRequest.prototype.setIn = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -402,10 +370,11 @@ proto.HelloResponse.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.HelloResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.HelloResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    out: msg.getOut()
+    out: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -456,35 +425,26 @@ proto.HelloResponse.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.HelloResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.HelloResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.HelloResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.HelloResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.HelloResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.HelloResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.HelloResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getOut();
+  f = message.getOut();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -495,26 +455,17 @@ proto.HelloResponse.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.HelloResponse} The clone.
- */
-proto.HelloResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.HelloResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string out = 1;
  * @return {string}
  */
 proto.HelloResponse.prototype.getOut = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.HelloResponse.prototype.setOut = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -561,6 +512,7 @@ proto.EmbeddedBigUInt.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EmbeddedBigUInt} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EmbeddedBigUInt.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -616,35 +568,26 @@ proto.EmbeddedBigUInt.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EmbeddedBigUInt} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EmbeddedBigUInt.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EmbeddedBigUInt.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EmbeddedBigUInt.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EmbeddedBigUInt} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EmbeddedBigUInt.prototype.serializeBinaryToWriter = function (writer) {
+proto.EmbeddedBigUInt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTestVal();
+  f = message.getTestVal();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -656,25 +599,16 @@ proto.EmbeddedBigUInt.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EmbeddedBigUInt} The clone.
- */
-proto.EmbeddedBigUInt.prototype.cloneMessage = function() {
-  return /** @type {!proto.EmbeddedBigUInt} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional BigUInt test_val = 1;
- * @return {proto.BigUInt}
+ * @return {?proto.BigUInt}
  */
 proto.EmbeddedBigUInt.prototype.getTestVal = function() {
-  return /** @type{proto.BigUInt} */ (
+  return /** @type{?proto.BigUInt} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.BigUInt, 1));
 };
 
 
-/** @param {proto.BigUInt|undefined} value  */
+/** @param {?proto.BigUInt|undefined} value */
 proto.EmbeddedBigUInt.prototype.setTestVal = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -687,7 +621,7 @@ proto.EmbeddedBigUInt.prototype.clearTestVal = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EmbeddedBigUInt.prototype.hasTestVal = function() {
   return jspb.Message.getField(this, 1) != null;

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -91,6 +93,7 @@ proto.EthFilterEnvelope.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthFilterEnvelope} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthFilterEnvelope.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -158,35 +161,26 @@ proto.EthFilterEnvelope.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthFilterEnvelope} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthFilterEnvelope.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthFilterEnvelope.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthFilterEnvelope.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthFilterEnvelope} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthFilterEnvelope.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthFilterEnvelope.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getEthBlockHashList();
+  f = message.getEthBlockHashList();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -194,7 +188,7 @@ proto.EthFilterEnvelope.prototype.serializeBinaryToWriter = function (writer) {
       proto.EthBlockHashList.serializeBinaryToWriter
     );
   }
-  f = this.getEthFilterLogList();
+  f = message.getEthFilterLogList();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -202,7 +196,7 @@ proto.EthFilterEnvelope.prototype.serializeBinaryToWriter = function (writer) {
       proto.EthFilterLogList.serializeBinaryToWriter
     );
   }
-  f = this.getEthTxHashList();
+  f = message.getEthTxHashList();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -214,25 +208,16 @@ proto.EthFilterEnvelope.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthFilterEnvelope} The clone.
- */
-proto.EthFilterEnvelope.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthFilterEnvelope} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional EthBlockHashList eth_block_hash_list = 1;
- * @return {proto.EthBlockHashList}
+ * @return {?proto.EthBlockHashList}
  */
 proto.EthFilterEnvelope.prototype.getEthBlockHashList = function() {
-  return /** @type{proto.EthBlockHashList} */ (
+  return /** @type{?proto.EthBlockHashList} */ (
     jspb.Message.getWrapperField(this, proto.EthBlockHashList, 1));
 };
 
 
-/** @param {proto.EthBlockHashList|undefined} value  */
+/** @param {?proto.EthBlockHashList|undefined} value */
 proto.EthFilterEnvelope.prototype.setEthBlockHashList = function(value) {
   jspb.Message.setOneofWrapperField(this, 1, proto.EthFilterEnvelope.oneofGroups_[0], value);
 };
@@ -245,7 +230,7 @@ proto.EthFilterEnvelope.prototype.clearEthBlockHashList = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EthFilterEnvelope.prototype.hasEthBlockHashList = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -254,15 +239,15 @@ proto.EthFilterEnvelope.prototype.hasEthBlockHashList = function() {
 
 /**
  * optional EthFilterLogList eth_filter_log_list = 2;
- * @return {proto.EthFilterLogList}
+ * @return {?proto.EthFilterLogList}
  */
 proto.EthFilterEnvelope.prototype.getEthFilterLogList = function() {
-  return /** @type{proto.EthFilterLogList} */ (
+  return /** @type{?proto.EthFilterLogList} */ (
     jspb.Message.getWrapperField(this, proto.EthFilterLogList, 2));
 };
 
 
-/** @param {proto.EthFilterLogList|undefined} value  */
+/** @param {?proto.EthFilterLogList|undefined} value */
 proto.EthFilterEnvelope.prototype.setEthFilterLogList = function(value) {
   jspb.Message.setOneofWrapperField(this, 2, proto.EthFilterEnvelope.oneofGroups_[0], value);
 };
@@ -275,7 +260,7 @@ proto.EthFilterEnvelope.prototype.clearEthFilterLogList = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EthFilterEnvelope.prototype.hasEthFilterLogList = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -284,15 +269,15 @@ proto.EthFilterEnvelope.prototype.hasEthFilterLogList = function() {
 
 /**
  * optional EthTxHashList eth_tx_hash_list = 3;
- * @return {proto.EthTxHashList}
+ * @return {?proto.EthTxHashList}
  */
 proto.EthFilterEnvelope.prototype.getEthTxHashList = function() {
-  return /** @type{proto.EthTxHashList} */ (
+  return /** @type{?proto.EthTxHashList} */ (
     jspb.Message.getWrapperField(this, proto.EthTxHashList, 3));
 };
 
 
-/** @param {proto.EthTxHashList|undefined} value  */
+/** @param {?proto.EthTxHashList|undefined} value */
 proto.EthFilterEnvelope.prototype.setEthTxHashList = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.EthFilterEnvelope.oneofGroups_[0], value);
 };
@@ -305,7 +290,7 @@ proto.EthFilterEnvelope.prototype.clearEthTxHashList = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EthFilterEnvelope.prototype.hasEthTxHashList = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -362,6 +347,7 @@ proto.EthBlockHashList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthBlockHashList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthBlockHashList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -404,8 +390,7 @@ proto.EthBlockHashList.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.getEthBlockHashList().push(value);
-      msg.setEthBlockHashList(msg.getEthBlockHashList());
+      msg.addEthBlockHash(value);
       break;
     default:
       reader.skipField();
@@ -417,35 +402,26 @@ proto.EthBlockHashList.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthBlockHashList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthBlockHashList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthBlockHashList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthBlockHashList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthBlockHashList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthBlockHashList.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthBlockHashList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getEthBlockHashList_asU8();
+  f = message.getEthBlockHashList_asU8();
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       1,
@@ -456,61 +432,55 @@ proto.EthBlockHashList.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthBlockHashList} The clone.
- */
-proto.EthBlockHashList.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthBlockHashList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated bytes eth_block_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.EthBlockHashList.prototype.getEthBlockHashList = function() {
-  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 1));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
  * repeated bytes eth_block_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * This is a type-conversion wrapper around `getEthBlockHashList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EthBlockHashList.prototype.getEthBlockHashList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getEthBlockHashList()));
 };
 
 
 /**
  * repeated bytes eth_block_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getEthBlockHashList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.EthBlockHashList.prototype.getEthBlockHashList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getEthBlockHashList()));
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
 proto.EthBlockHashList.prototype.setEthBlockHashList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
 
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.EthBlockHashList.prototype.addEthBlockHash = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
 proto.EthBlockHashList.prototype.clearEthBlockHashList = function() {
-  jspb.Message.setField(this, 1, []);
+  this.setEthBlockHashList([]);
 };
 
 
@@ -564,6 +534,7 @@ proto.EthTxHashList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthTxHashList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthTxHashList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -606,8 +577,7 @@ proto.EthTxHashList.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.getEthTxHashList().push(value);
-      msg.setEthTxHashList(msg.getEthTxHashList());
+      msg.addEthTxHash(value);
       break;
     default:
       reader.skipField();
@@ -619,35 +589,26 @@ proto.EthTxHashList.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthTxHashList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthTxHashList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthTxHashList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthTxHashList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthTxHashList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthTxHashList.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthTxHashList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getEthTxHashList_asU8();
+  f = message.getEthTxHashList_asU8();
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       1,
@@ -658,61 +619,55 @@ proto.EthTxHashList.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthTxHashList} The clone.
- */
-proto.EthTxHashList.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthTxHashList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated bytes eth_tx_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.EthTxHashList.prototype.getEthTxHashList = function() {
-  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 1));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
  * repeated bytes eth_tx_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * This is a type-conversion wrapper around `getEthTxHashList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EthTxHashList.prototype.getEthTxHashList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getEthTxHashList()));
 };
 
 
 /**
  * repeated bytes eth_tx_hash = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getEthTxHashList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.EthTxHashList.prototype.getEthTxHashList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getEthTxHashList()));
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
 proto.EthTxHashList.prototype.setEthTxHashList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
 
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.EthTxHashList.prototype.addEthTxHash = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
 proto.EthTxHashList.prototype.clearEthTxHashList = function() {
-  jspb.Message.setField(this, 1, []);
+  this.setEthTxHashList([]);
 };
 
 
@@ -766,6 +721,7 @@ proto.EventDataList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EventDataList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EventDataList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -810,8 +766,7 @@ proto.EventDataList.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.EventData;
       reader.readMessage(value,proto.EventData.deserializeBinaryFromReader);
-      msg.getEventsList().push(value);
-      msg.setEventsList(msg.getEventsList());
+      msg.addEvents(value);
       break;
     default:
       reader.skipField();
@@ -823,35 +778,26 @@ proto.EventDataList.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EventDataList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EventDataList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EventDataList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EventDataList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EventDataList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EventDataList.prototype.serializeBinaryToWriter = function (writer) {
+proto.EventDataList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getEventsList();
+  f = message.getEventsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -863,29 +809,28 @@ proto.EventDataList.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EventDataList} The clone.
- */
-proto.EventDataList.prototype.cloneMessage = function() {
-  return /** @type {!proto.EventDataList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated EventData events = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.EventData>}
+ * @return {!Array<!proto.EventData>}
  */
 proto.EventDataList.prototype.getEventsList = function() {
-  return /** @type{!Array.<!proto.EventData>} */ (
+  return /** @type{!Array<!proto.EventData>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.EventData, 1));
 };
 
 
-/** @param {Array.<!proto.EventData>} value  */
+/** @param {!Array<!proto.EventData>} value */
 proto.EventDataList.prototype.setEventsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.EventData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.EventData}
+ */
+proto.EventDataList.prototype.addEvents = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.EventData, opt_index);
 };
 
 
@@ -944,20 +889,21 @@ proto.EventData.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EventData} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EventData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topicsList: jspb.Message.getField(msg, 1),
+    topicsList: jspb.Message.getRepeatedField(msg, 1),
     caller: (f = msg.getCaller()) && proto_loom_pb.Address.toObject(includeInstance, f),
     address: (f = msg.getAddress()) && proto_loom_pb.Address.toObject(includeInstance, f),
-    pluginName: msg.getPluginName(),
-    blockHeight: msg.getBlockHeight(),
+    pluginName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    blockHeight: jspb.Message.getFieldWithDefault(msg, 5, 0),
     encodedBody: msg.getEncodedBody_asB64(),
     originalRequest: msg.getOriginalRequest_asB64(),
     txHash: msg.getTxHash_asB64(),
-    transactionIndex: msg.getTransactionIndex(),
+    transactionIndex: jspb.Message.getFieldWithDefault(msg, 9, 0),
     blockHash: msg.getBlockHash_asB64(),
-    blockTime: msg.getBlockTime()
+    blockTime: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
   if (includeInstance) {
@@ -996,8 +942,7 @@ proto.EventData.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.getTopicsList().push(value);
-      msg.setTopicsList(msg.getTopicsList());
+      msg.addTopics(value);
       break;
     case 2:
       var value = new proto_loom_pb.Address;
@@ -1051,42 +996,33 @@ proto.EventData.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EventData} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EventData.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EventData.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EventData.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EventData} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EventData.prototype.serializeBinaryToWriter = function (writer) {
+proto.EventData.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTopicsList();
+  f = message.getTopicsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
       f
     );
   }
-  f = this.getCaller();
+  f = message.getCaller();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1094,7 +1030,7 @@ proto.EventData.prototype.serializeBinaryToWriter = function (writer) {
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getAddress();
+  f = message.getAddress();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -1102,56 +1038,56 @@ proto.EventData.prototype.serializeBinaryToWriter = function (writer) {
       proto_loom_pb.Address.serializeBinaryToWriter
     );
   }
-  f = this.getPluginName();
+  f = message.getPluginName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = this.getBlockHeight();
+  f = message.getBlockHeight();
   if (f !== 0) {
     writer.writeUint64(
       5,
       f
     );
   }
-  f = this.getEncodedBody_asU8();
+  f = message.getEncodedBody_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       6,
       f
     );
   }
-  f = this.getOriginalRequest_asU8();
+  f = message.getOriginalRequest_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       7,
       f
     );
   }
-  f = this.getTxHash_asU8();
+  f = message.getTxHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       8,
       f
     );
   }
-  f = this.getTransactionIndex();
+  f = message.getTransactionIndex();
   if (f !== 0) {
     writer.writeUint64(
       9,
       f
     );
   }
-  f = this.getBlockHash_asU8();
+  f = message.getBlockHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       10,
       f
     );
   }
-  f = this.getBlockTime();
+  f = message.getBlockTime();
   if (f !== 0) {
     writer.writeInt64(
       11,
@@ -1162,47 +1098,45 @@ proto.EventData.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EventData} The clone.
- */
-proto.EventData.prototype.cloneMessage = function() {
-  return /** @type {!proto.EventData} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated string topics = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EventData.prototype.getTopicsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.EventData.prototype.setTopicsList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.EventData.prototype.addTopics = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
 proto.EventData.prototype.clearTopicsList = function() {
-  jspb.Message.setField(this, 1, []);
+  this.setTopicsList([]);
 };
 
 
 /**
  * optional Address caller = 2;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.EventData.prototype.getCaller = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 2));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.EventData.prototype.setCaller = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1215,7 +1149,7 @@ proto.EventData.prototype.clearCaller = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EventData.prototype.hasCaller = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1224,15 +1158,15 @@ proto.EventData.prototype.hasCaller = function() {
 
 /**
  * optional Address address = 3;
- * @return {proto.Address}
+ * @return {?proto.Address}
  */
 proto.EventData.prototype.getAddress = function() {
-  return /** @type{proto.Address} */ (
+  return /** @type{?proto.Address} */ (
     jspb.Message.getWrapperField(this, proto_loom_pb.Address, 3));
 };
 
 
-/** @param {proto.Address|undefined} value  */
+/** @param {?proto.Address|undefined} value */
 proto.EventData.prototype.setAddress = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
@@ -1245,7 +1179,7 @@ proto.EventData.prototype.clearAddress = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.EventData.prototype.hasAddress = function() {
   return jspb.Message.getField(this, 3) != null;
@@ -1257,13 +1191,13 @@ proto.EventData.prototype.hasAddress = function() {
  * @return {string}
  */
 proto.EventData.prototype.getPluginName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.EventData.prototype.setPluginName = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1272,13 +1206,13 @@ proto.EventData.prototype.setPluginName = function(value) {
  * @return {number}
  */
 proto.EventData.prototype.getBlockHeight = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EventData.prototype.setBlockHeight = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -1287,7 +1221,7 @@ proto.EventData.prototype.setBlockHeight = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EventData.prototype.getEncodedBody = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -1315,9 +1249,9 @@ proto.EventData.prototype.getEncodedBody_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EventData.prototype.setEncodedBody = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -1326,7 +1260,7 @@ proto.EventData.prototype.setEncodedBody = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EventData.prototype.getOriginalRequest = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -1354,9 +1288,9 @@ proto.EventData.prototype.getOriginalRequest_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EventData.prototype.setOriginalRequest = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -1365,7 +1299,7 @@ proto.EventData.prototype.setOriginalRequest = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EventData.prototype.getTxHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -1393,9 +1327,9 @@ proto.EventData.prototype.getTxHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EventData.prototype.setTxHash = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3BytesField(this, 8, value);
 };
 
 
@@ -1404,13 +1338,13 @@ proto.EventData.prototype.setTxHash = function(value) {
  * @return {number}
  */
 proto.EventData.prototype.getTransactionIndex = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EventData.prototype.setTransactionIndex = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -1419,7 +1353,7 @@ proto.EventData.prototype.setTransactionIndex = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EventData.prototype.getBlockHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 10, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -1447,9 +1381,9 @@ proto.EventData.prototype.getBlockHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EventData.prototype.setBlockHash = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3BytesField(this, 10, value);
 };
 
 
@@ -1458,13 +1392,13 @@ proto.EventData.prototype.setBlockHash = function(value) {
  * @return {number}
  */
 proto.EventData.prototype.getBlockTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 11, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EventData.prototype.setBlockTime = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -1518,6 +1452,7 @@ proto.TxReceiptList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.TxReceiptList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.TxReceiptList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1562,8 +1497,7 @@ proto.TxReceiptList.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.EvmTxReceipt;
       reader.readMessage(value,proto.EvmTxReceipt.deserializeBinaryFromReader);
-      msg.getTxReceiptsList().push(value);
-      msg.setTxReceiptsList(msg.getTxReceiptsList());
+      msg.addTxReceipts(value);
       break;
     default:
       reader.skipField();
@@ -1575,35 +1509,26 @@ proto.TxReceiptList.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.TxReceiptList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.TxReceiptList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.TxReceiptList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.TxReceiptList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.TxReceiptList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.TxReceiptList.prototype.serializeBinaryToWriter = function (writer) {
+proto.TxReceiptList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTxReceiptsList();
+  f = message.getTxReceiptsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1615,29 +1540,28 @@ proto.TxReceiptList.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.TxReceiptList} The clone.
- */
-proto.TxReceiptList.prototype.cloneMessage = function() {
-  return /** @type {!proto.TxReceiptList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated EvmTxReceipt tx_receipts = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.EvmTxReceipt>}
+ * @return {!Array<!proto.EvmTxReceipt>}
  */
 proto.TxReceiptList.prototype.getTxReceiptsList = function() {
-  return /** @type{!Array.<!proto.EvmTxReceipt>} */ (
+  return /** @type{!Array<!proto.EvmTxReceipt>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.EvmTxReceipt, 1));
 };
 
 
-/** @param {Array.<!proto.EvmTxReceipt>} value  */
+/** @param {!Array<!proto.EvmTxReceipt>} value */
 proto.TxReceiptList.prototype.setTxReceiptsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.EvmTxReceipt=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.EvmTxReceipt}
+ */
+proto.TxReceiptList.prototype.addTxReceipts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.EvmTxReceipt, opt_index);
 };
 
 
@@ -1696,19 +1620,20 @@ proto.EvmTxReceipt.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EvmTxReceipt} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EvmTxReceipt.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transactionIndex: msg.getTransactionIndex(),
+    transactionIndex: jspb.Message.getFieldWithDefault(msg, 1, 0),
     blockHash: msg.getBlockHash_asB64(),
-    blockNumber: msg.getBlockNumber(),
-    cumulativeGasUsed: msg.getCumulativeGasUsed(),
-    gasUsed: msg.getGasUsed(),
+    blockNumber: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    cumulativeGasUsed: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    gasUsed: jspb.Message.getFieldWithDefault(msg, 5, 0),
     contractAddress: msg.getContractAddress_asB64(),
     logsList: jspb.Message.toObjectList(msg.getLogsList(),
     proto.EventData.toObject, includeInstance),
     logsBloom: msg.getLogsBloom_asB64(),
-    status: msg.getStatus(),
+    status: jspb.Message.getFieldWithDefault(msg, 9, 0),
     txHash: msg.getTxHash_asB64()
   };
 
@@ -1773,8 +1698,7 @@ proto.EvmTxReceipt.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = new proto.EventData;
       reader.readMessage(value,proto.EventData.deserializeBinaryFromReader);
-      msg.getLogsList().push(value);
-      msg.setLogsList(msg.getLogsList());
+      msg.addLogs(value);
       break;
     case 8:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -1798,77 +1722,68 @@ proto.EvmTxReceipt.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EvmTxReceipt} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EvmTxReceipt.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EvmTxReceipt.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EvmTxReceipt.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EvmTxReceipt} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EvmTxReceipt.prototype.serializeBinaryToWriter = function (writer) {
+proto.EvmTxReceipt.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTransactionIndex();
+  f = message.getTransactionIndex();
   if (f !== 0) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = this.getBlockHash_asU8();
+  f = message.getBlockHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getBlockNumber();
+  f = message.getBlockNumber();
   if (f !== 0) {
     writer.writeInt64(
       3,
       f
     );
   }
-  f = this.getCumulativeGasUsed();
+  f = message.getCumulativeGasUsed();
   if (f !== 0) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = this.getGasUsed();
+  f = message.getGasUsed();
   if (f !== 0) {
     writer.writeInt32(
       5,
       f
     );
   }
-  f = this.getContractAddress_asU8();
+  f = message.getContractAddress_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       6,
       f
     );
   }
-  f = this.getLogsList();
+  f = message.getLogsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       7,
@@ -1876,21 +1791,21 @@ proto.EvmTxReceipt.prototype.serializeBinaryToWriter = function (writer) {
       proto.EventData.serializeBinaryToWriter
     );
   }
-  f = this.getLogsBloom_asU8();
+  f = message.getLogsBloom_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       8,
       f
     );
   }
-  f = this.getStatus();
+  f = message.getStatus();
   if (f !== 0) {
     writer.writeInt32(
       9,
       f
     );
   }
-  f = this.getTxHash_asU8();
+  f = message.getTxHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       10,
@@ -1901,26 +1816,17 @@ proto.EvmTxReceipt.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EvmTxReceipt} The clone.
- */
-proto.EvmTxReceipt.prototype.cloneMessage = function() {
-  return /** @type {!proto.EvmTxReceipt} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int32 transaction_index = 1;
  * @return {number}
  */
 proto.EvmTxReceipt.prototype.getTransactionIndex = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxReceipt.prototype.setTransactionIndex = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1929,7 +1835,7 @@ proto.EvmTxReceipt.prototype.setTransactionIndex = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxReceipt.prototype.getBlockHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1957,9 +1863,9 @@ proto.EvmTxReceipt.prototype.getBlockHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxReceipt.prototype.setBlockHash = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -1968,13 +1874,13 @@ proto.EvmTxReceipt.prototype.setBlockHash = function(value) {
  * @return {number}
  */
 proto.EvmTxReceipt.prototype.getBlockNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxReceipt.prototype.setBlockNumber = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -1983,13 +1889,13 @@ proto.EvmTxReceipt.prototype.setBlockNumber = function(value) {
  * @return {number}
  */
 proto.EvmTxReceipt.prototype.getCumulativeGasUsed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxReceipt.prototype.setCumulativeGasUsed = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1998,13 +1904,13 @@ proto.EvmTxReceipt.prototype.setCumulativeGasUsed = function(value) {
  * @return {number}
  */
 proto.EvmTxReceipt.prototype.getGasUsed = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxReceipt.prototype.setGasUsed = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -2013,7 +1919,7 @@ proto.EvmTxReceipt.prototype.setGasUsed = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxReceipt.prototype.getContractAddress = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -2041,27 +1947,35 @@ proto.EvmTxReceipt.prototype.getContractAddress_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxReceipt.prototype.setContractAddress = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
 /**
  * repeated EventData logs = 7;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.EventData>}
+ * @return {!Array<!proto.EventData>}
  */
 proto.EvmTxReceipt.prototype.getLogsList = function() {
-  return /** @type{!Array.<!proto.EventData>} */ (
+  return /** @type{!Array<!proto.EventData>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.EventData, 7));
 };
 
 
-/** @param {Array.<!proto.EventData>} value  */
+/** @param {!Array<!proto.EventData>} value */
 proto.EvmTxReceipt.prototype.setLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.EventData=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.EventData}
+ */
+proto.EvmTxReceipt.prototype.addLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.EventData, opt_index);
 };
 
 
@@ -2075,7 +1989,7 @@ proto.EvmTxReceipt.prototype.clearLogsList = function() {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxReceipt.prototype.getLogsBloom = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -2103,9 +2017,9 @@ proto.EvmTxReceipt.prototype.getLogsBloom_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxReceipt.prototype.setLogsBloom = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3BytesField(this, 8, value);
 };
 
 
@@ -2114,13 +2028,13 @@ proto.EvmTxReceipt.prototype.setLogsBloom = function(value) {
  * @return {number}
  */
 proto.EvmTxReceipt.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxReceipt.prototype.setStatus = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -2129,7 +2043,7 @@ proto.EvmTxReceipt.prototype.setStatus = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxReceipt.prototype.getTxHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 10, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -2157,9 +2071,9 @@ proto.EvmTxReceipt.prototype.getTxHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxReceipt.prototype.setTxHash = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3BytesField(this, 10, value);
 };
 
 
@@ -2206,19 +2120,20 @@ proto.EvmTxObject.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EvmTxObject} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EvmTxObject.toObject = function(includeInstance, msg) {
   var f, obj = {
     hash: msg.getHash_asB64(),
-    nonce: msg.getNonce(),
+    nonce: jspb.Message.getFieldWithDefault(msg, 2, 0),
     blockHash: msg.getBlockHash_asB64(),
-    blockNumber: msg.getBlockNumber(),
-    transactionIndex: msg.getTransactionIndex(),
+    blockNumber: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    transactionIndex: jspb.Message.getFieldWithDefault(msg, 5, 0),
     from: msg.getFrom_asB64(),
     to: msg.getTo_asB64(),
-    value: msg.getValue(),
-    gasPrice: msg.getGasPrice(),
-    gas: msg.getGas(),
+    value: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    gasPrice: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    gas: jspb.Message.getFieldWithDefault(msg, 10, 0),
     input: msg.getInput_asB64()
   };
 
@@ -2310,105 +2225,96 @@ proto.EvmTxObject.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EvmTxObject} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EvmTxObject.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EvmTxObject.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EvmTxObject.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EvmTxObject} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EvmTxObject.prototype.serializeBinaryToWriter = function (writer) {
+proto.EvmTxObject.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getHash_asU8();
+  f = message.getHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
       f
     );
   }
-  f = this.getNonce();
+  f = message.getNonce();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = this.getBlockHash_asU8();
+  f = message.getBlockHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
       f
     );
   }
-  f = this.getBlockNumber();
+  f = message.getBlockNumber();
   if (f !== 0) {
     writer.writeInt64(
       4,
       f
     );
   }
-  f = this.getTransactionIndex();
+  f = message.getTransactionIndex();
   if (f !== 0) {
     writer.writeInt32(
       5,
       f
     );
   }
-  f = this.getFrom_asU8();
+  f = message.getFrom_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       6,
       f
     );
   }
-  f = this.getTo_asU8();
+  f = message.getTo_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       7,
       f
     );
   }
-  f = this.getValue();
+  f = message.getValue();
   if (f !== 0) {
     writer.writeInt64(
       8,
       f
     );
   }
-  f = this.getGasPrice();
+  f = message.getGasPrice();
   if (f !== 0) {
     writer.writeInt64(
       9,
       f
     );
   }
-  f = this.getGas();
+  f = message.getGas();
   if (f !== 0) {
     writer.writeInt64(
       10,
       f
     );
   }
-  f = this.getInput_asU8();
+  f = message.getInput_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       11,
@@ -2419,20 +2325,11 @@ proto.EvmTxObject.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EvmTxObject} The clone.
- */
-proto.EvmTxObject.prototype.cloneMessage = function() {
-  return /** @type {!proto.EvmTxObject} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bytes hash = 1;
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxObject.prototype.getHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2460,9 +2357,9 @@ proto.EvmTxObject.prototype.getHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxObject.prototype.setHash = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BytesField(this, 1, value);
 };
 
 
@@ -2471,13 +2368,13 @@ proto.EvmTxObject.prototype.setHash = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getNonce = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setNonce = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2486,7 +2383,7 @@ proto.EvmTxObject.prototype.setNonce = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxObject.prototype.getBlockHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -2514,9 +2411,9 @@ proto.EvmTxObject.prototype.getBlockHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxObject.prototype.setBlockHash = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -2525,13 +2422,13 @@ proto.EvmTxObject.prototype.setBlockHash = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getBlockNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setBlockNumber = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2540,13 +2437,13 @@ proto.EvmTxObject.prototype.setBlockNumber = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getTransactionIndex = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setTransactionIndex = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -2555,7 +2452,7 @@ proto.EvmTxObject.prototype.setTransactionIndex = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxObject.prototype.getFrom = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -2583,9 +2480,9 @@ proto.EvmTxObject.prototype.getFrom_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxObject.prototype.setFrom = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -2594,7 +2491,7 @@ proto.EvmTxObject.prototype.setFrom = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxObject.prototype.getTo = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -2622,9 +2519,9 @@ proto.EvmTxObject.prototype.getTo_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxObject.prototype.setTo = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -2633,13 +2530,13 @@ proto.EvmTxObject.prototype.setTo = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getValue = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setValue = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
@@ -2648,13 +2545,13 @@ proto.EvmTxObject.prototype.setValue = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getGasPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setGasPrice = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -2663,13 +2560,13 @@ proto.EvmTxObject.prototype.setGasPrice = function(value) {
  * @return {number}
  */
 proto.EvmTxObject.prototype.getGas = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EvmTxObject.prototype.setGas = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -2678,7 +2575,7 @@ proto.EvmTxObject.prototype.setGas = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EvmTxObject.prototype.getInput = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 11, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -2706,9 +2603,9 @@ proto.EvmTxObject.prototype.getInput_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EvmTxObject.prototype.setInput = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3BytesField(this, 11, value);
 };
 
 
@@ -2762,10 +2659,11 @@ proto.EthBlockInfo.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthBlockInfo} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthBlockInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    number: msg.getNumber(),
+    number: jspb.Message.getFieldWithDefault(msg, 1, 0),
     hash: msg.getHash_asB64(),
     parentHash: msg.getParentHash_asB64(),
     nonce: msg.getNonce_asB64(),
@@ -2775,13 +2673,13 @@ proto.EthBlockInfo.toObject = function(includeInstance, msg) {
     stateRoot: msg.getStateRoot_asB64(),
     receiptsRoot: msg.getReceiptsRoot_asB64(),
     miner: msg.getMiner_asB64(),
-    difficulty: msg.getDifficulty(),
-    totalDifficulty: msg.getTotalDifficulty(),
+    difficulty: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    totalDifficulty: jspb.Message.getFieldWithDefault(msg, 12, 0),
     extraData: msg.getExtraData_asB64(),
-    size: msg.getSize(),
-    gaslimit: msg.getGaslimit(),
-    gasused: msg.getGasused(),
-    timestamp: msg.getTimestamp(),
+    size: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    gaslimit: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    gasused: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 17, 0),
     transactionsList: msg.getTransactionsList_asB64(),
     unclesList: msg.getUnclesList_asB64()
   };
@@ -2890,13 +2788,11 @@ proto.EthBlockInfo.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 18:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.getTransactionsList().push(value);
-      msg.setTransactionsList(msg.getTransactionsList());
+      msg.addTransactions(value);
       break;
     case 19:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.getUnclesList().push(value);
-      msg.setUnclesList(msg.getUnclesList());
+      msg.addUncles(value);
       break;
     default:
       reader.skipField();
@@ -2908,161 +2804,152 @@ proto.EthBlockInfo.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthBlockInfo} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthBlockInfo.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthBlockInfo.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthBlockInfo.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthBlockInfo} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthBlockInfo.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthBlockInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNumber();
+  f = message.getNumber();
   if (f !== 0) {
     writer.writeInt64(
       1,
       f
     );
   }
-  f = this.getHash_asU8();
+  f = message.getHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getParentHash_asU8();
+  f = message.getParentHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       3,
       f
     );
   }
-  f = this.getNonce_asU8();
+  f = message.getNonce_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       4,
       f
     );
   }
-  f = this.getSha3Uncles_asU8();
+  f = message.getSha3Uncles_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       5,
       f
     );
   }
-  f = this.getLogsBloom_asU8();
+  f = message.getLogsBloom_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       6,
       f
     );
   }
-  f = this.getTransactionsRoot_asU8();
+  f = message.getTransactionsRoot_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       7,
       f
     );
   }
-  f = this.getStateRoot_asU8();
+  f = message.getStateRoot_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       8,
       f
     );
   }
-  f = this.getReceiptsRoot_asU8();
+  f = message.getReceiptsRoot_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       9,
       f
     );
   }
-  f = this.getMiner_asU8();
+  f = message.getMiner_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       10,
       f
     );
   }
-  f = this.getDifficulty();
+  f = message.getDifficulty();
   if (f !== 0) {
     writer.writeInt64(
       11,
       f
     );
   }
-  f = this.getTotalDifficulty();
+  f = message.getTotalDifficulty();
   if (f !== 0) {
     writer.writeInt64(
       12,
       f
     );
   }
-  f = this.getExtraData_asU8();
+  f = message.getExtraData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       13,
       f
     );
   }
-  f = this.getSize();
+  f = message.getSize();
   if (f !== 0) {
     writer.writeInt64(
       14,
       f
     );
   }
-  f = this.getGaslimit();
+  f = message.getGaslimit();
   if (f !== 0) {
     writer.writeInt64(
       15,
       f
     );
   }
-  f = this.getGasused();
+  f = message.getGasused();
   if (f !== 0) {
     writer.writeInt64(
       16,
       f
     );
   }
-  f = this.getTimestamp();
+  f = message.getTimestamp();
   if (f !== 0) {
     writer.writeInt64(
       17,
       f
     );
   }
-  f = this.getTransactionsList_asU8();
+  f = message.getTransactionsList_asU8();
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       18,
       f
     );
   }
-  f = this.getUnclesList_asU8();
+  f = message.getUnclesList_asU8();
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       19,
@@ -3073,26 +2960,17 @@ proto.EthBlockInfo.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthBlockInfo} The clone.
- */
-proto.EthBlockInfo.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthBlockInfo} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int64 number = 1;
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setNumber = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3101,7 +2979,7 @@ proto.EthBlockInfo.prototype.setNumber = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3129,9 +3007,9 @@ proto.EthBlockInfo.prototype.getHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setHash = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -3140,7 +3018,7 @@ proto.EthBlockInfo.prototype.setHash = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getParentHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -3168,9 +3046,9 @@ proto.EthBlockInfo.prototype.getParentHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setParentHash = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -3179,7 +3057,7 @@ proto.EthBlockInfo.prototype.setParentHash = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getNonce = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -3207,9 +3085,9 @@ proto.EthBlockInfo.prototype.getNonce_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setNonce = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -3218,7 +3096,7 @@ proto.EthBlockInfo.prototype.setNonce = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getSha3Uncles = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -3246,9 +3124,9 @@ proto.EthBlockInfo.prototype.getSha3Uncles_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setSha3Uncles = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 
@@ -3257,7 +3135,7 @@ proto.EthBlockInfo.prototype.setSha3Uncles = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getLogsBloom = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -3285,9 +3163,9 @@ proto.EthBlockInfo.prototype.getLogsBloom_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setLogsBloom = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -3296,7 +3174,7 @@ proto.EthBlockInfo.prototype.setLogsBloom = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getTransactionsRoot = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -3324,9 +3202,9 @@ proto.EthBlockInfo.prototype.getTransactionsRoot_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setTransactionsRoot = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -3335,7 +3213,7 @@ proto.EthBlockInfo.prototype.setTransactionsRoot = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getStateRoot = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -3363,9 +3241,9 @@ proto.EthBlockInfo.prototype.getStateRoot_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setStateRoot = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3BytesField(this, 8, value);
 };
 
 
@@ -3374,7 +3252,7 @@ proto.EthBlockInfo.prototype.setStateRoot = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getReceiptsRoot = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 9, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -3402,9 +3280,9 @@ proto.EthBlockInfo.prototype.getReceiptsRoot_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setReceiptsRoot = function(value) {
-  jspb.Message.setField(this, 9, value);
+  jspb.Message.setProto3BytesField(this, 9, value);
 };
 
 
@@ -3413,7 +3291,7 @@ proto.EthBlockInfo.prototype.setReceiptsRoot = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getMiner = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 10, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -3441,9 +3319,9 @@ proto.EthBlockInfo.prototype.getMiner_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setMiner = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3BytesField(this, 10, value);
 };
 
 
@@ -3452,13 +3330,13 @@ proto.EthBlockInfo.prototype.setMiner = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getDifficulty = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 11, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setDifficulty = function(value) {
-  jspb.Message.setField(this, 11, value);
+  jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
@@ -3467,13 +3345,13 @@ proto.EthBlockInfo.prototype.setDifficulty = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getTotalDifficulty = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setTotalDifficulty = function(value) {
-  jspb.Message.setField(this, 12, value);
+  jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -3482,7 +3360,7 @@ proto.EthBlockInfo.prototype.setTotalDifficulty = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthBlockInfo.prototype.getExtraData = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 13, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -3510,9 +3388,9 @@ proto.EthBlockInfo.prototype.getExtraData_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthBlockInfo.prototype.setExtraData = function(value) {
-  jspb.Message.setField(this, 13, value);
+  jspb.Message.setProto3BytesField(this, 13, value);
 };
 
 
@@ -3521,13 +3399,13 @@ proto.EthBlockInfo.prototype.setExtraData = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 14, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setSize = function(value) {
-  jspb.Message.setField(this, 14, value);
+  jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
@@ -3536,13 +3414,13 @@ proto.EthBlockInfo.prototype.setSize = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getGaslimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 15, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setGaslimit = function(value) {
-  jspb.Message.setField(this, 15, value);
+  jspb.Message.setProto3IntField(this, 15, value);
 };
 
 
@@ -3551,13 +3429,13 @@ proto.EthBlockInfo.prototype.setGaslimit = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getGasused = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 16, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setGasused = function(value) {
-  jspb.Message.setField(this, 16, value);
+  jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
@@ -3566,113 +3444,119 @@ proto.EthBlockInfo.prototype.setGasused = function(value) {
  * @return {number}
  */
 proto.EthBlockInfo.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 17, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthBlockInfo.prototype.setTimestamp = function(value) {
-  jspb.Message.setField(this, 17, value);
+  jspb.Message.setProto3IntField(this, 17, value);
 };
 
 
 /**
  * repeated bytes transactions = 18;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.EthBlockInfo.prototype.getTransactionsList = function() {
-  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 18));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 18));
 };
 
 
 /**
  * repeated bytes transactions = 18;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * This is a type-conversion wrapper around `getTransactionsList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EthBlockInfo.prototype.getTransactionsList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getTransactionsList()));
 };
 
 
 /**
  * repeated bytes transactions = 18;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getTransactionsList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.EthBlockInfo.prototype.getTransactionsList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getTransactionsList()));
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
 proto.EthBlockInfo.prototype.setTransactionsList = function(value) {
   jspb.Message.setField(this, 18, value || []);
 };
 
 
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.EthBlockInfo.prototype.addTransactions = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 18, value, opt_index);
+};
+
+
 proto.EthBlockInfo.prototype.clearTransactionsList = function() {
-  jspb.Message.setField(this, 18, []);
+  this.setTransactionsList([]);
 };
 
 
 /**
  * repeated bytes uncles = 19;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.EthBlockInfo.prototype.getUnclesList = function() {
-  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 19));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 19));
 };
 
 
 /**
  * repeated bytes uncles = 19;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * This is a type-conversion wrapper around `getUnclesList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EthBlockInfo.prototype.getUnclesList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getUnclesList()));
 };
 
 
 /**
  * repeated bytes uncles = 19;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getUnclesList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.EthBlockInfo.prototype.getUnclesList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getUnclesList()));
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
 proto.EthBlockInfo.prototype.setUnclesList = function(value) {
   jspb.Message.setField(this, 19, value || []);
 };
 
 
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.EthBlockInfo.prototype.addUncles = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 19, value, opt_index);
+};
+
+
 proto.EthBlockInfo.prototype.clearUnclesList = function() {
-  jspb.Message.setField(this, 19, []);
+  this.setUnclesList([]);
 };
 
 
@@ -3726,6 +3610,7 @@ proto.EthFilterLogList.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthFilterLogList} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthFilterLogList.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3770,8 +3655,7 @@ proto.EthFilterLogList.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.EthFilterLog;
       reader.readMessage(value,proto.EthFilterLog.deserializeBinaryFromReader);
-      msg.getEthBlockLogsList().push(value);
-      msg.setEthBlockLogsList(msg.getEthBlockLogsList());
+      msg.addEthBlockLogs(value);
       break;
     default:
       reader.skipField();
@@ -3783,35 +3667,26 @@ proto.EthFilterLogList.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthFilterLogList} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthFilterLogList.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthFilterLogList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthFilterLogList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthFilterLogList} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthFilterLogList.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthFilterLogList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getEthBlockLogsList();
+  f = message.getEthBlockLogsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3823,29 +3698,28 @@ proto.EthFilterLogList.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthFilterLogList} The clone.
- */
-proto.EthFilterLogList.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthFilterLogList} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated EthFilterLog eth_block_logs = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.EthFilterLog>}
+ * @return {!Array<!proto.EthFilterLog>}
  */
 proto.EthFilterLogList.prototype.getEthBlockLogsList = function() {
-  return /** @type{!Array.<!proto.EthFilterLog>} */ (
+  return /** @type{!Array<!proto.EthFilterLog>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.EthFilterLog, 1));
 };
 
 
-/** @param {Array.<!proto.EthFilterLog>} value  */
+/** @param {!Array<!proto.EthFilterLog>} value */
 proto.EthFilterLogList.prototype.setEthBlockLogsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.EthFilterLog=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.EthFilterLog}
+ */
+proto.EthFilterLogList.prototype.addEthBlockLogs = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.EthFilterLog, opt_index);
 };
 
 
@@ -3904,19 +3778,20 @@ proto.EthFilterLog.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.EthFilterLog} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.EthFilterLog.toObject = function(includeInstance, msg) {
   var f, obj = {
-    removed: msg.getRemoved(),
-    logIndex: msg.getLogIndex(),
-    transactionIndex: msg.getTransactionIndex(),
+    removed: jspb.Message.getFieldWithDefault(msg, 1, false),
+    logIndex: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    transactionIndex: jspb.Message.getFieldWithDefault(msg, 3, 0),
     transactionHash: msg.getTransactionHash_asB64(),
     blockHash: msg.getBlockHash_asB64(),
-    blockNumber: msg.getBlockNumber(),
+    blockNumber: jspb.Message.getFieldWithDefault(msg, 6, 0),
     address: msg.getAddress_asB64(),
     data: msg.getData_asB64(),
     topicsList: msg.getTopicsList_asB64(),
-    blockTime: msg.getBlockTime()
+    blockTime: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -3987,8 +3862,7 @@ proto.EthFilterLog.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.getTopicsList().push(value);
-      msg.setTopicsList(msg.getTopicsList());
+      msg.addTopics(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt64());
@@ -4004,98 +3878,89 @@ proto.EthFilterLog.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.EthFilterLog} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.EthFilterLog.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.EthFilterLog.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.EthFilterLog.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.EthFilterLog} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.EthFilterLog.prototype.serializeBinaryToWriter = function (writer) {
+proto.EthFilterLog.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRemoved();
+  f = message.getRemoved();
   if (f) {
     writer.writeBool(
       1,
       f
     );
   }
-  f = this.getLogIndex();
+  f = message.getLogIndex();
   if (f !== 0) {
     writer.writeInt64(
       2,
       f
     );
   }
-  f = this.getTransactionIndex();
+  f = message.getTransactionIndex();
   if (f !== 0) {
     writer.writeInt32(
       3,
       f
     );
   }
-  f = this.getTransactionHash_asU8();
+  f = message.getTransactionHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       4,
       f
     );
   }
-  f = this.getBlockHash_asU8();
+  f = message.getBlockHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       5,
       f
     );
   }
-  f = this.getBlockNumber();
+  f = message.getBlockNumber();
   if (f !== 0) {
     writer.writeInt64(
       6,
       f
     );
   }
-  f = this.getAddress_asU8();
+  f = message.getAddress_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       7,
       f
     );
   }
-  f = this.getData_asU8();
+  f = message.getData_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       8,
       f
     );
   }
-  f = this.getTopicsList_asU8();
+  f = message.getTopicsList_asU8();
   if (f.length > 0) {
     writer.writeRepeatedBytes(
       9,
       f
     );
   }
-  f = this.getBlockTime();
+  f = message.getBlockTime();
   if (f !== 0) {
     writer.writeInt64(
       10,
@@ -4106,28 +3971,19 @@ proto.EthFilterLog.prototype.serializeBinaryToWriter = function (writer) {
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.EthFilterLog} The clone.
- */
-proto.EthFilterLog.prototype.cloneMessage = function() {
-  return /** @type {!proto.EthFilterLog} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bool removed = 1;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.EthFilterLog.prototype.getRemoved = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.EthFilterLog.prototype.setRemoved = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -4136,13 +3992,13 @@ proto.EthFilterLog.prototype.setRemoved = function(value) {
  * @return {number}
  */
 proto.EthFilterLog.prototype.getLogIndex = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthFilterLog.prototype.setLogIndex = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -4151,13 +4007,13 @@ proto.EthFilterLog.prototype.setLogIndex = function(value) {
  * @return {number}
  */
 proto.EthFilterLog.prototype.getTransactionIndex = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthFilterLog.prototype.setTransactionIndex = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -4166,7 +4022,7 @@ proto.EthFilterLog.prototype.setTransactionIndex = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthFilterLog.prototype.getTransactionHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -4194,9 +4050,9 @@ proto.EthFilterLog.prototype.getTransactionHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthFilterLog.prototype.setTransactionHash = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
@@ -4205,7 +4061,7 @@ proto.EthFilterLog.prototype.setTransactionHash = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthFilterLog.prototype.getBlockHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -4233,9 +4089,9 @@ proto.EthFilterLog.prototype.getBlockHash_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthFilterLog.prototype.setBlockHash = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 
@@ -4244,13 +4100,13 @@ proto.EthFilterLog.prototype.setBlockHash = function(value) {
  * @return {number}
  */
 proto.EthFilterLog.prototype.getBlockNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthFilterLog.prototype.setBlockNumber = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -4259,7 +4115,7 @@ proto.EthFilterLog.prototype.setBlockNumber = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthFilterLog.prototype.getAddress = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -4287,9 +4143,9 @@ proto.EthFilterLog.prototype.getAddress_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthFilterLog.prototype.setAddress = function(value) {
-  jspb.Message.setField(this, 7, value);
+  jspb.Message.setProto3BytesField(this, 7, value);
 };
 
 
@@ -4298,7 +4154,7 @@ proto.EthFilterLog.prototype.setAddress = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.EthFilterLog.prototype.getData = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 8, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -4326,59 +4182,62 @@ proto.EthFilterLog.prototype.getData_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.EthFilterLog.prototype.setData = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3BytesField(this, 8, value);
 };
 
 
 /**
  * repeated bytes topics = 9;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.EthFilterLog.prototype.getTopicsList = function() {
-  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getField(this, 9));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
 /**
  * repeated bytes topics = 9;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * This is a type-conversion wrapper around `getTopicsList()`
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.EthFilterLog.prototype.getTopicsList_asB64 = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.bytesListAsB64(
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
       this.getTopicsList()));
 };
 
 
 /**
  * repeated bytes topics = 9;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getTopicsList()`
- * @return {!Array.<!Uint8Array>}
+ * @return {!Array<!Uint8Array>}
  */
 proto.EthFilterLog.prototype.getTopicsList_asU8 = function() {
-  return /** @type {!Array.<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
       this.getTopicsList()));
 };
 
 
-/** @param {!(Array<!Uint8Array>|Array<string>)} value  */
+/** @param {!(Array<!Uint8Array>|Array<string>)} value */
 proto.EthFilterLog.prototype.setTopicsList = function(value) {
   jspb.Message.setField(this, 9, value || []);
 };
 
 
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ */
+proto.EthFilterLog.prototype.addTopics = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
 proto.EthFilterLog.prototype.clearTopicsList = function() {
-  jspb.Message.setField(this, 9, []);
+  this.setTopicsList([]);
 };
 
 
@@ -4387,13 +4246,13 @@ proto.EthFilterLog.prototype.clearTopicsList = function() {
  * @return {number}
  */
 proto.EthFilterLog.prototype.getBlockTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.EthFilterLog.prototype.setBlockTime = function(value) {
-  jspb.Message.setField(this, 10, value);
+  jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
